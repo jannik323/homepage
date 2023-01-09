@@ -1,0 +1,39 @@
+[
+    {
+        "name":"Jarlson",
+        "urlName":"jarlson",
+        "category":"games",
+        "showcased":true
+    },{
+        "name":"Jarlslice",
+        "urlName":"jarlslice",
+        "category":"games",
+        "showcased":true
+    },{
+        "name":"Dice-Alien",
+        "urlName":"dicealien",
+        "category":"games",
+        "showcased":false
+    },{
+        "name":"Speedrun.com id finder",
+        "urlName":"srcidfinder",
+        "category":"tools",
+        "showcased":true
+    },{
+        "name":"Karlson Score",
+        "urlName":"karlsonscore",
+        "category":"tools",
+        "showcased":true
+    },{
+        "name":"JDungeon",
+        "urlName":"jdungeon",
+        "category":"games",
+        "showcased":true
+    },{
+        "name":"HomePage",
+        "urlName":"homepage",
+        "category":"other",
+        "showcased":true
+    }
+    
+]

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title><link rel="stylesheet" href="/css/pond.css">
+    <script src="/js/pond.js" defer></script>
+    <style>
+        .blink{
+            animation: blinker 2s linear infinite;
+        }
+        @keyframes blinker {
+            75%{
+                opacity: 1;
+            }
+            25% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+    <main ondragstart="return false;" ondrop="return false;">
+        <div id="moveableRoot" ondragstart="return false;" ondrop="return false;">
+            <img src="/imgs/whatsthat.png" alt="whatsthat" style="position: absolute;left:0px; top :650px;aspect-ratio: 1;width: 270px;">
+
+            <div ondragstart="return false;" ondrop="return false;" class="moveable" style="left:120px; top :20px">
+                <h1 ondragstart="return false;" ondrop="return false;">About Me</h1>
+            </div>
+
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :20px">
+                <a  href="/" ondragstart="return false;" ondrop="return false;">Home</a>
+            </div>
+
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :120px">
+                <span>Hey hey ,Jannik323 here !</span>
+            </div>
+
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :200px">
+                <span>Here are some facts about me :</span> <br><br>
+                <ul>
+                    <li id="age">I am years old</li>
+                    <li>I live somewhere in europe</li>
+                    <li>I do like frogs 🐸</li>
+                    <li>I would consider myself an above average tboi player</li>
+                    <li>I like anything horror related</li>
+                    <li>I prefer being anonymous on the internet, but still chose my irl name as a nickname</li>
+                    <li>I love spicy food</li>
+                    <li>I study comp-sci right now (2023)</li>
+                    <li style="cursor: pointer;" title="but it doesnt do anything">I know that this text is clickable</li>
+                    <li>I also know that the text above is also hoverable</li>
+                    <li>I love listening to music , but hardly anyone knows my music preferences</li>
+                    <li><marquee scrollamount="2" behavior="alternate" direction="right"><blink class="blink">I</blink> think old html tags are cool</marquee> </li>
+                    <li>I do not know any more interesting facts about myself</li>
+                </ul>
+            </div>
+
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :510px">
+                <a href="https://github.com/jannik323"><img src="/imgs/github-mark-white.svg" width="40px" height="40px" alt=""></a>
+            </div>
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:120px; top :510px">
+                <a href="jannik323.itch.io/"><img src="https://static.itch.io/images/itchio-textless-white.svg" width="40px" height="40px"  alt=""></a>
+            </div>
+
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:220px; top :510px">
+                <a href="javascript:alert('jannik#7401')"><img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg" width="40px" height="40px"  alt=""></a>
+            </div>
+
+            <button onclick="createBox(this)"  class="moveable" style="left:120px; top :800px" ondragstart="return false;" ondrop="return false;">Box?🥱</button>
+
+        </div>
+    </main>
+    <script>
+        let myBirthday = new Date(2001,7,19);
+        let ageElement = document.getElementById("age");
+        updateAge();        
+        setInterval(updateAge,3000)
+        function updateAge(){
+            ageElement.innerText="I am "+  ((Date.now() - myBirthday.getTime())/31556952000).toFixed(7) + " years old";
+        }
+
+        function createBox(self){
+            let element = document.createElement("div");
+            element.classList.add("moveable");
+            element.ondragstart = ()=>false;
+            element.ondrop = ()=>false;
+            element.style.opacity="0.8";
+            moveableRoot.appendChild(element);
+            initMoveable(element);
+            element.moveable.x = self.offsetLeft+25+(Math.random()*25);
+            element.moveable.y = self.offsetTop-60+(Math.random()*25);
+        }
+    </script>
+</body>
+</html>

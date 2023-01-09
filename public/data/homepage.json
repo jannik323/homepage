@@ -1,0 +1,17 @@
+{"name":"HomePage",
+"description":"This website :=)\n\nThis is the first time ive made an actual homepage that is hosted on its own vps and not just github pages lol.\n\n This Website is obviously not finished yet and i dont use anything fancy right now.",
+"date":null,
+"state":"in progress",
+"tech":[
+    "javascript",
+    "nodejs"
+],
+"imgs":[
+    "/imgs/homepage.png"
+],
+"links":{
+    "itch":null,
+    "download":null,
+    "try":"/",
+    "github":null
+}}

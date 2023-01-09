@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jannik323</title><link rel="stylesheet" href="/css/pond.css">
+    <script src="/js/pond.js" defer></script>
+</head>
+<body >
+    
+    <main ondragstart="return false;" ondrop="return false;">
+        <div id="moveableRoot" ondragstart="return false;" ondrop="return false;">
+            <div ondragstart="return false;" ondrop="return false;" class="moveable" style="left:20px; top :20px">
+                <h1 ondragstart="return false;" ondrop="return false;">Jannik323</h1>
+            </div>
+
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:240px; top :30px">
+                <a  href="/about" ondragstart="return false;" ondrop="return false;">About Me</a>
+            </div>
+        
+        
+            <div class="moveable" style="left:480px; top :30px; min-width:max-content;">
+                <span>webpage visits: </span> <span id="webpageVisits">1000</span>
+            </div>
+        
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:55px; top :120px; width: 650px; height: 500px;">
+                <h2>Projects</h2>
+        
+                <template id="linkTemplate">
+                    <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :60px">
+                        <a  href="/" ondragstart="return false;" ondrop="return false;"></a>
+                    </div>
+                </template>
+        
+                <div id="gamesLinks" class="moveable" ondragstart="return false;" ondrop="return false;" style="left:25px; top :80px; width: 150px; height: 400px;">
+                    <h2>Games</h2>
+            
+                    <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :355px;width: 100px; height: 20px;">
+                        <a  href="/overview/games" ondragstart="return false;" ondrop="return false;">View All</a>
+                    </div>
+                </div>
+        
+                <div id="toolsLinks" class="moveable" ondragstart="return false;" ondrop="return false;" style="left:245px; top :80px; width: 150px; height: 400px;">
+                    <h2>Tools</h2>
+            
+                    <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :355px;width: 100px; height: 20px;">
+                        <a  href="/overview/tools" ondragstart="return false;" ondrop="return false;">View All</a>
+                    </div>
+                </div>
+        
+                <div id="otherLinks" class="moveable" ondragstart="return false;" ondrop="return false;" style="left:465px; top :80px; width: 150px; height: 400px;">
+                    <h2>Other</h2>
+            
+                    <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :355px;width: 100px; height: 20px;">
+                        <a  href="/overview/other" ondragstart="return false;" ondrop="return false;">View All</a>
+                    </div>
+                </div>
+                
+            </div>
+        
+            <button onclick="track(this);"  class="moveable" style="left:20px; top :700px" ondragstart="return false;" ondrop="return false;">Wanna be tracked ? 😳👉👈</button>
+        
+        
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:150px; top :800px; width: 110px; height: 110px;">
+                <button onclick="changeGlobalForce(-.5);"  class="moveable" style="left:18px; top :55px; width: 35px; height: 35px; padding: 5px;" ondragstart="return false;" ondrop="return false;">←</button>
+                <button onclick="changeGlobalForce(.5);"  class="moveable" style="left:92px; top :55px; width: 35px; height: 35px; padding: 5px;" ondragstart="return false;" ondrop="return false;">→</button>
+                <button onclick="changeGlobalForce(0,-.5);"  class="moveable" style="left:55px; top :18px; width: 35px; height: 35px; padding: 5px;" ondragstart="return false;" ondrop="return false;">↑</button>
+                <button onclick="changeGlobalForce(0);"  class="moveable" style="left:55px; top :55px; width: 35px; height: 35px; padding: 5px;" ondragstart="return false;" ondrop="return false;">0</button>
+                <button onclick="changeGlobalForce(0,.5);"  class="moveable" style="left:55px; top :90px; width: 35px; height: 35px; padding: 5px;" ondragstart="return false;" ondrop="return false;">↓</button>
+                
+            </div>
+
+            <div  class="moveable" ondragstart="return false;" ondrop="return false;" style="left:420px; top :730px; min-width:50px; min-height: 50px; max-width: 300px;max-height: 200px;  resize:both; overflow:hidden;">
+                <p>resize me 🥶</p>
+            </div>
+        </div>
+
+    </main>
+    <script>
+        let webpageVisitsEle = document.getElementById("webpageVisits");
+        if(webpageVisitsEle!=null){
+            fetch("/data/stats").then(response=>{
+                if (!response.ok) {
+                    error(response.status);
+                    throw new Error("Request failed with status "+response.status);
+                }
+                return response.json();
+            }).then(data=>{
+                webpageVisitsEle.innerText=data.pageVisits;
+            })
+            .catch(errordata=>console.error(errordata));
+        }
+
+        fetch("/data/projects?showcased=true").then(response=>{
+            if (!response.ok) {
+                console.error(response.status);
+                throw new Error("Request failed with status "+response.status);
+            }
+            return response.json();
+        }).then(data=>{
+
+            let gamesLinksElement = document.getElementById("gamesLinks");
+            let toolsLinksElement = document.getElementById("toolsLinks");
+            let otherLinksElement = document.getElementById("otherLinks");
+
+            let linkElementTemplate = document.getElementById("linkTemplate").content.querySelector("div");
+
+            let gamesNewlinkpos = 80;
+            let toolsNewlinkpos = 80;
+            let otherNewlinkpos = 80;
+
+            for (let i = 0; i < data.length; i++) {
+                let element = linkElementTemplate.cloneNode(true);
+                if(data[i].showcased){
+                    element.classList.add("star");
+                }
+                element.style.opacity="0.8";
+                element.style.maxWidth="55%";
+                element.querySelector("a").innerText=data[i].name;
+                element.querySelector("a").style.width="100%";
+                element.querySelector("a").href="/projects/"+data[i].urlName;
+                switch(data[i].category){
+                    case "games":
+                        gamesLinksElement.appendChild(element);
+                        initMoveable(element);
+                        element.moveable.y = gamesNewlinkpos;
+                        gamesNewlinkpos+=element.clientHeight+20;
+                        break;
+                    case "tools":
+                        toolsLinksElement.appendChild(element);
+                        initMoveable(element);
+                        element.moveable.y = toolsNewlinkpos;
+                        toolsNewlinkpos+=element.clientHeight+20;
+                        break;
+                    case "other":
+                        otherLinksElement.appendChild(element);
+                        initMoveable(element);
+                        element.moveable.y = otherNewlinkpos;
+                        otherNewlinkpos+=element.clientHeight+20;
+                        break;
+                }
+            }
+        })
+        .catch(errordata=>console.error(errordata));
+    </script>
+</body>
+</html>

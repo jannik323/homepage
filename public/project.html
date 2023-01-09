@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title><link rel="stylesheet" href="/css/pond.css">
+    <script src="/js/pond.js" defer></script>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+    <main ondragstart="return false;" ondrop="return false;">
+        <div id="moveableRoot" ondragstart="return false;" ondrop="return false;">
+            <div ondragstart="return false;" ondrop="return false;" class="moveable" style="left:120px; top :20px">
+                <h1 ondragstart="return false;" ondrop="return false;" id="projectName">Fetching...</h1>
+            </div>
+
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :30px">
+                <a  href="/" ondragstart="return false;" ondrop="return false;">Home</a>
+            </div>
+
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :115px">
+                <span>State: </span><u><span id="projectState">Finished</span></u>
+            </div>
+            
+            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top:200px; min-width: 300px; min-height: 100px; width: max-content; height: max-content;max-width: 420px; overflow: auto;">
+                <span ondragstart="return false;" ondrop="return false;" id="projectDescription" >Fetching...</span>
+                
+                <br>
+                <br>
+                
+                <div id="projectTech">
+
+                </div>
+                <template id="techTemplate">
+                    <div>
+                        <img src="" alt="tech used" width="30px" height="30px">
+                    </div>
+                </template>
+            </div>
+
+            <div id="projectLinks" class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :500px; width: 350px; height: 100px;">
+                <h2>Links</h2>
+        
+                <template id="linkTemplate">
+                    <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :60px">
+                        <a  href="/" ondragstart="return false;" ondrop="return false;"></a>
+                    </div>
+                </template>
+            </div>
+
+            <template id="imgTemplate">
+                <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:500px; top :60px">
+                    <img src="" alt="project img" style="aspect-ratio: 1;max-width: 235px;" ondragstart="return false;" ondrop="return false;">
+                </div>
+            </template>
+
+        </div>
+    </main>
+    <script>
+        let projectName = document.location.pathname.split("/")[2];
+        fetch("/data/"+projectName+".json").then(response=>{
+        if (!response.ok) {
+            console.error(response.status);
+            throw new Error("Request failed with status "+response.status);
+        }
+        return response.json();
+        }).then(data=>{
+            let projectNameElement =  document.getElementById("projectName");
+            projectNameElement.innerText=data.name;
+            document.title = "Project: "+data.name;
+
+            let projectStateElement =  document.getElementById("projectState");
+            projectStateElement.innerText=data.state;
+            switch(data.state){
+                case "finished":
+                    projectStateElement.style.color="#5ac95a";
+                    break;
+                case "never finished💀":
+                    projectStateElement.style.color="red";
+                    break;
+                case "paused":
+                    projectStateElement.style.color="#bcac7a";
+                    break;
+                case "in progress":
+                    projectStateElement.style.color="#8495ef";
+                    break;
+            }
+
+            let projectDescriptionElement =  document.getElementById("projectDescription");
+            projectDescriptionElement.innerText=data.description;
+
+            let techElementTemplate = document.getElementById("techTemplate").content.querySelector("div");
+            let projectTechElement = document.getElementById("projectTech");
+
+            for (let i = 0; i < data.tech.length; i++) {
+                let element = techElementTemplate.cloneNode(true);
+                element.querySelector("img").src="/imgs/"+data.tech[i]+".svg";
+                element.querySelector("img").alt=data.tech[i];
+                element.title = data.tech[i];
+                projectTechElement.appendChild(element);
+            }
+
+            let projectLinksElement = document.getElementById("projectLinks");
+            projectLinksElement.moveable.y=(projectDescriptionElement.parentNode.clientHeight+projectDescriptionElement.parentNode.offsetTop+40);
+
+            let projectLinkElementTemplate = document.getElementById("linkTemplate").content.querySelector("div");
+
+            let newlinkpos = 20;
+
+            if(data.links.itch!=null){
+                let element = projectLinkElementTemplate.cloneNode(true);
+                element.style.opacity="0.8";
+                element.querySelector("a").innerText="Itch.io";
+                element.querySelector("a").href=data.links.itch;
+                projectLinksElement.appendChild(element);
+                initMoveable(element);
+                element.moveable.x = newlinkpos;
+                newlinkpos+=element.clientWidth+20;
+            }
+
+            if(data.links.download!=null){
+                let element = projectLinkElementTemplate.cloneNode(true);
+                element.style.opacity="0.8";
+                element.querySelector("a").innerText="Download";
+                element.querySelector("a").href=data.links.download;
+                projectLinksElement.appendChild(element);
+                initMoveable(element);
+                element.moveable.x = newlinkpos;
+                newlinkpos+=element.clientWidth+20;
+            }
+
+            if(data.links.try!=null){
+                let element = projectLinkElementTemplate.cloneNode(true);
+                element.style.opacity="0.8";
+                element.querySelector("a").innerText="Try out";
+                element.querySelector("a").href=data.links.try;
+                projectLinksElement.appendChild(element);
+                initMoveable(element);
+                element.moveable.x = newlinkpos;
+                newlinkpos+=element.clientWidth+20;
+            }
+
+            if(data.links.github!=null){
+                let element = projectLinkElementTemplate.cloneNode(true);
+                element.style.opacity="0.8";
+                element.querySelector("a").innerText="Github";
+                element.querySelector("a").href=data.links.github;
+                projectLinksElement.appendChild(element);
+                initMoveable(element);
+                element.moveable.x = newlinkpos;
+                newlinkpos+=element.clientWidth+20;
+            }
+
+            if(projectLinksElement.childElementCount>2){
+                moveableContainers.push(projectLinksElement.moveable.children);
+            }
+            projectLinksElement.style.width = newlinkpos+"px";
+
+
+            let imgElementTemplate = document.getElementById("imgTemplate").content.querySelector("div");
+
+            let newimgposx = projectNameElement.parentNode.clientWidth+projectNameElement.parentNode.offsetLeft;
+            if(projectDescriptionElement.parentNode.clientWidth+projectDescriptionElement.parentNode.offsetLeft>newimgposx){
+                newimgposx = projectDescriptionElement.parentNode.clientWidth+projectDescriptionElement.parentNode.offsetLeft+20;
+            }else{
+                newimgposx+=20;
+            }
+
+            let newimgposy = 20;
+            for (let i = 0; i < data.imgs.length; i++) {
+                let element = imgElementTemplate.cloneNode(true);
+                element.style.opacity="0.8";
+                element.querySelector("img").src=data.imgs[i];
+                moveableRoot.appendChild(element);
+                initMoveable(element);
+                element.moveable.x = newimgposx;
+                element.moveable.y = newimgposy;
+                newimgposy+=element.clientHeight+20;
+            }//this code could mess up if imgs load in after new one gets added :(
+            
+        })
+        .catch(errordata=>console.error(errordata));
+
+        
+    </script>
+</body>
+</html>
