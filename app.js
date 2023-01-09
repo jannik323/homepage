@@ -16,7 +16,7 @@ function startServer(){
     // Add routes
     app.get('/', (req, res) => {
         statData.pageVisits++;
-        res.sendFile(join(__dirname, 'public', 'start.html'));
+        res.sendFile(join(__dirname, 'public', 'home.html'));
     });
 
     app.get('/about', (req, res) => {

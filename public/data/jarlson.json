@@ -11,10 +11,9 @@
     "https://img.itch.zone/aW1nLzc3ODEzODAuZ2lm/original/1BHVIV.gif",
     "https://img.itch.zone/aW1hZ2UvMTMzMTU3My83NzUxODY2LmdpZg==/794x1000/5PxqxA.gif",
     "https://img.itch.zone/aW1hZ2UvMTMzMTU3My83NzQ0OTA5LnBuZw==/794x1000/lkxN00.png"
-],
-"links":{
-    "itch":"https://jannik323.itch.io/Jarlson",
-    "download":null,
-    "try":null,
-    "github":null
-}}
+],"links":[
+    {
+        "name":"itch.io",
+        "url":"https://jannik323.itch.io/Jarlson"
+    }
+]}

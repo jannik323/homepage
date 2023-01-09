@@ -1,12 +1,12 @@
 [
     {
-        "name":"Jarlson",
-        "urlName":"jarlson",
+        "name":"Jarlslice",
+        "urlName":"jarlslice",
         "category":"games",
         "showcased":true
     },{
-        "name":"Jarlslice",
-        "urlName":"jarlslice",
+        "name":"Jarlson",
+        "urlName":"jarlson",
         "category":"games",
         "showcased":true
     },{

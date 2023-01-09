@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title><link rel="stylesheet" href="/css/pond.css">
-    <script src="/js/pond.js" defer></script>
+    <script src="/js/moveable.js" defer></script>
+    <script src="/hs/about.js" defer></script>
     <style>
         .blink{
             animation: blinker 2s linear infinite;
@@ -71,26 +72,5 @@
 
         </div>
     </main>
-    <script>
-        let myBirthday = new Date(2001,7,19);
-        let ageElement = document.getElementById("age");
-        updateAge();        
-        setInterval(updateAge,3000)
-        function updateAge(){
-            ageElement.innerText="I am "+  ((Date.now() - myBirthday.getTime())/31556952000).toFixed(7) + " years old";
-        }
-
-        function createBox(self){
-            let element = document.createElement("div");
-            element.classList.add("moveable");
-            element.ondragstart = ()=>false;
-            element.ondrop = ()=>false;
-            element.style.opacity="0.8";
-            moveableRoot.appendChild(element);
-            initMoveable(element);
-            element.moveable.x = self.offsetLeft+25+(Math.random()*25);
-            element.moveable.y = self.offsetTop-60+(Math.random()*25);
-        }
-    </script>
 </body>
 </html>

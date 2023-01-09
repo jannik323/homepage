@@ -9,9 +9,9 @@
 "imgs":[
 
 ],
-"links":{
-    "itch":"https://jannik323.itch.io/jarlslice",
-    "download":null,
-    "try":null,
-    "github":null
-}}
+"links":[
+    {
+        "name":"itch.io",
+        "url":"https://jannik323.itch.io/jarlslice"
+    }
+]}

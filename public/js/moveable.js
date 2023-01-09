@@ -125,16 +125,6 @@ setInterval(()=>{
     
 },10);
 
-function track(self){
-    self.onclick=null;
-    self.innerText= "I know where you are 😈";
-    self.title = "Just as a note: \nNo actual personal data is being collected :)"
-    addEventListener("mousemove",e=>{
-        self.innerText="I know where you are 😈";
-        self.innerText+= "\n x: "+e.clientX+", y:"+e.clientY;
-    })
-}
-
 function changeGlobalForce(x,y=0){
     globalforce.x=x;
     globalforce.y=y;
