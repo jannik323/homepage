@@ -8,7 +8,8 @@ function updateAge(){
 
 function createBox(self){
     let element = document.createElement("div");
-    element.classList.add("moveable");
+    element.classList.add("block");
+    element.setAttribute("moveable","");
     element.ondragstart = ()=>false;
     element.ondrop = ()=>false;
     element.style.opacity="0.8";

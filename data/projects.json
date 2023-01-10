@@ -3,37 +3,44 @@
         "name":"Jarlslice",
         "urlName":"jarlslice",
         "category":"games",
-        "showcased":true
+        "showcased":true,
+        "shortdescription":"The Sequel to Jarlson!"
     },{
         "name":"Jarlson",
         "urlName":"jarlson",
         "category":"games",
-        "showcased":true
+        "showcased":true,
+        "shortdescription":"My first Unity game!"
     },{
         "name":"Dice-Alien",
         "urlName":"dicealien",
         "category":"games",
-        "showcased":false
+        "showcased":false,
+        "shortdescription":"A game for the gmtk2022 jam!"
     },{
         "name":"Speedrun.com id finder",
         "urlName":"srcidfinder",
         "category":"tools",
-        "showcased":true
+        "showcased":true,
+        "shortdescription":"A website to easily look up game,level and category id's on sr.c!"
     },{
         "name":"Karlson Score",
         "urlName":"karlsonscore",
         "category":"tools",
-        "showcased":true
+        "showcased":true,
+        "shortdescription":"A website to view and list scores calculated from different leaderboard placements for Karlson speedruns!"
     },{
         "name":"JDungeon",
         "urlName":"jdungeon",
         "category":"games",
-        "showcased":true
+        "showcased":true,
+        "shortdescription":"A 3D rouge-lite / dungeon crawler inspired by \"the binding of isaac\"!"
     },{
         "name":"HomePage",
         "urlName":"homepage",
         "category":"other",
-        "showcased":true
+        "showcased":true,
+        "shortdescription":"The Website you are on right now!"
     }
     
 ]

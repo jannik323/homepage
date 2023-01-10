@@ -13,7 +13,7 @@ fetch("/data/projects?category="+categoryName).then(response=>{
     let gameLinksElement = document.getElementById("gameLinks");
 
     let gameLinkElementTemplate = document.getElementById("gameLinkTemplate").content.querySelector("div");
-
+    
     let newlinkpos = 20;
 
     for (let i = 0; i < data.length; i++) {
@@ -29,9 +29,17 @@ fetch("/data/projects?category="+categoryName).then(response=>{
         element.moveable.y = newlinkpos;
         newlinkpos+=element.clientHeight+20;
 
-        element.addEventListener("mouseover",e=>{
-            console.log(data[i].name);
-        },{once:true});
+        let hoverdescriptionElement = element.querySelector("div");
+        hoverdescriptionElement.innerText = data[i].shortdescription;
+        hoverdescriptionElement.style.left = (element.clientWidth+20)+"px";
+        hoverdescriptionElement.style.maxWidth = (element.parentElement.clientWidth-(hoverdescriptionElement.offsetLeft+80))+"px";
+
+        element.onmouseenter=()=>{
+            hoverdescriptionElement.style.opacity=1;
+        }
+        element.onmouseleave=()=>{
+            hoverdescriptionElement.style.opacity=0;
+        }
     }
 
     moveableContainers.push(gameLinksElement.moveable.children);
@@ -40,5 +48,4 @@ fetch("/data/projects?category="+categoryName).then(response=>{
     if(gameLinksElement.clientHeight>700){
         document.getElementById("moveableRoot").style.height=(gameLinksElement.clientHeight+200)+"px";
     }
-})
-.catch(errordata=>console.error(errordata));
+}).catch(errordata=>console.error(errordata));

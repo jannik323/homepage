@@ -48,6 +48,14 @@ function startServer(){
         res.json(data);
     });
 
+    app.get('/secret', (req, res) => {
+        res.send("👽<br> 01101000011001010110110001101100011011110010000001101001001000000110000101101101001000000110000101101110001000000110000101101100011010010110010101101110")
+    });
+
+    app.all('*', (req, res) => {
+        res.status(404).sendFile(join(__dirname, 'public', 'error.html'));
+    });
+
 
     app.listen(PORT, () => {
         console.log(`Server started on port ${PORT}`);

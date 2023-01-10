@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <title>About Me</title><link rel="stylesheet" href="/css/pond.css">
     <script src="/js/moveable.js" defer></script>
-    <script src="/hs/about.js" defer></script>
+    <script src="/js/about.js" defer></script>
     <style>
         .blink{
             animation: blinker 2s linear infinite;
@@ -24,21 +24,20 @@
 <body ondragstart="return false;" ondrop="return false;">
     <main ondragstart="return false;" ondrop="return false;">
         <div id="moveableRoot" ondragstart="return false;" ondrop="return false;">
-            <img src="/imgs/whatsthat.png" alt="whatsthat" style="position: absolute;left:0px; top :650px;aspect-ratio: 1;width: 270px;">
 
-            <div ondragstart="return false;" ondrop="return false;" class="moveable" style="left:120px; top :20px">
+            <div moveable ondragstart="return false;" ondrop="return false;" class="block" style="left:120px; top :20px">
                 <h1 ondragstart="return false;" ondrop="return false;">About Me</h1>
             </div>
 
-            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :20px">
+            <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :20px">
                 <a  href="/" ondragstart="return false;" ondrop="return false;">Home</a>
             </div>
 
-            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :120px">
+            <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :120px">
                 <span>Hey hey ,Jannik323 here !</span>
             </div>
 
-            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :200px">
+            <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :200px">
                 <span>Here are some facts about me :</span> <br><br>
                 <ul>
                     <li id="age">I am years old</li>
@@ -57,18 +56,18 @@
                 </ul>
             </div>
 
-            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :510px">
+            <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :510px">
                 <a href="https://github.com/jannik323"><img src="/imgs/github-mark-white.svg" width="40px" height="40px" alt=""></a>
             </div>
-            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:120px; top :510px">
+            <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:120px; top :510px">
                 <a href="jannik323.itch.io/"><img src="https://static.itch.io/images/itchio-textless-white.svg" width="40px" height="40px"  alt=""></a>
             </div>
 
-            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:220px; top :510px">
+            <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:220px; top :510px">
                 <a href="javascript:alert('jannik#7401')"><img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg" width="40px" height="40px"  alt=""></a>
             </div>
 
-            <button onclick="createBox(this)"  class="moveable" style="left:120px; top :800px" ondragstart="return false;" ondrop="return false;">Box?🥱</button>
+            <button onclick="createBox(this)" moveable class="block" style="left:120px; top :800px" ondragstart="return false;" ondrop="return false;">Box?🥱</button>
 
         </div>
     </main>

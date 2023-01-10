@@ -61,6 +61,9 @@ return response.json();
 
     if(projectLinksElement.childElementCount>2){
         moveableContainers.push(projectLinksElement.moveable.children);
+    }else{
+        projectLinksElement.remove();
+        moveableRoot.moveable.children.pop(projectLinksElement.moveable);
     }
     projectLinksElement.style.width = newlinkpos+"px";
 
@@ -75,16 +78,25 @@ return response.json();
     }
 
     let newimgposy = 20;
-    for (let i = 0; i < data.imgs.length; i++) {
+    let imgCount = 0;
+    addImageElement();
+    function addImageElement(){
+        if(imgCount>data.imgs.length-1)return;
+
         let element = imgElementTemplate.cloneNode(true);
         element.style.opacity="0.8";
-        element.querySelector("img").src=data.imgs[i];
+        element.querySelector("img").src=data.imgs[imgCount];
         moveableRoot.appendChild(element);
         initMoveable(element);
         element.moveable.x = newimgposx;
         element.moveable.y = newimgposy;
-        newimgposy+=element.clientHeight+20;
-    }//this code could mess up if imgs load in after new one gets added :(
+        element.querySelector("img").onload=()=>{
+            newimgposy+=element.clientHeight+20;
+            imgCount++;
+            addImageElement();
+        }
+    }
     
 })
 .catch(errordata=>console.error(errordata));
+

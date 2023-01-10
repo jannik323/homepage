@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <title>Projects</title><link rel="stylesheet" href="/css/pond.css">
     <script src="/js/moveable.js" defer></script>
     <script src="/js/project.js" defer></script>
@@ -11,19 +11,19 @@
 <body ondragstart="return false;" ondrop="return false;">
     <main ondragstart="return false;" ondrop="return false;">
         <div id="moveableRoot" ondragstart="return false;" ondrop="return false;">
-            <div ondragstart="return false;" ondrop="return false;" class="moveable" style="left:120px; top :20px">
+            <div moveable ondragstart="return false;" ondrop="return false;" class="block" style="left:120px; top :20px">
                 <h1 ondragstart="return false;" ondrop="return false;" id="projectName">Fetching...</h1>
             </div>
 
-            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :30px">
+            <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :30px">
                 <a  href="/" ondragstart="return false;" ondrop="return false;">Home</a>
             </div>
 
-            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :115px">
+            <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :115px">
                 <span>State: </span><u><span id="projectState">Finished</span></u>
             </div>
             
-            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top:200px; min-width: 300px; min-height: 100px; width: max-content; height: max-content;max-width: 420px; overflow: auto;">
+            <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top:200px; min-width: 300px; min-height: 100px; width: max-content; height: max-content;max-width: 420px; overflow: auto;">
                 <span ondragstart="return false;" ondrop="return false;" id="projectDescription" >Fetching...</span>
                 
                 <br>
@@ -34,24 +34,24 @@
                 </div>
                 <template id="techTemplate">
                     <div>
-                        <img src="" alt="tech used" width="30px" height="30px">
+                        <img class="hoverpop" src="" alt="tech used" width="30px" height="30px">
                     </div>
                 </template>
             </div>
 
-            <div id="projectLinks" class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :500px; width: 350px; height: 100px;">
+            <div moveable id="projectLinks" class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :500px; width: 350px; height: 100px;">
                 <h2>Links</h2>
         
                 <template id="linkTemplate">
-                    <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :60px">
+                    <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :60px">
                         <a  href="/" ondragstart="return false;" ondrop="return false;"></a>
                     </div>
                 </template>
             </div>
 
             <template id="imgTemplate">
-                <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:500px; top :60px">
-                    <img src="" alt="project img" style="aspect-ratio: 1;max-width: 235px;" ondragstart="return false;" ondrop="return false;">
+                <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:500px; top :60px">
+                    <img src="" alt="project img" style="max-width: 235px;" ondragstart="return false;" ondrop="return false;">
                 </div>
             </template>
 

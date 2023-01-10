@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <title>Overview:</title><link rel="stylesheet" href="/css/pond.css">
     <script src="/js/moveable.js" defer></script>
     <script src="/js/overview.js" defer></script>
@@ -11,21 +11,22 @@
 <body ondragstart="return false;" ondrop="return false;">
     <main ondragstart="return false;" ondrop="return false;">
         <div id="moveableRoot" ondragstart="return false;" ondrop="return false;">
-            <div ondragstart="return false;" ondrop="return false;" class="moveable" style="left:120px; top :20px">
+            <div moveable ondragstart="return false;" ondrop="return false;" class="block" style="left:120px; top :20px">
                 <h1  id="overviewTitle" ondragstart="return false;" ondrop="return false;" >Games</h1>
             </div>
 
-            <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :30px">
+            <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :30px">
                 <a  href="/" ondragstart="return false;" ondrop="return false;">Home</a>
             </div>
 
-            <div id="gameLinks" class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :120px; width: 600px;height: 800px;">
+            <div moveable id="gameLinks" class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :120px; width: 600px;height: 800px;">
                 <template id="gameLinkTemplate">
-                    <div class="moveable" ondragstart="return false;" ondrop="return false;" style="left:20px; top :20px">
+                    <div moveable class="block" ondragstart="return false;" ondrop="return false;" style="left:20px; top :20px">
                         <a  href="/projects/jarlslice" ondragstart="return false;" ondrop="return false;">Jarlslice</a>
+
+                        <div class="descriptionhover block"></div>
                     </div>
                 </template>
-
 
             </div>
         </div>

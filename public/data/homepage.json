@@ -3,8 +3,11 @@
 "date":null,
 "state":"in progress",
 "tech":[
+    "nodejs",
+    "express-js",
     "javascript",
-    "nodejs"
+    "html",
+    "css"
 ],
 "imgs":[
     "/imgs/homepage.png"

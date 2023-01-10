@@ -8,7 +8,7 @@ body,html{
 }
 
 .star::after{
-    font-size: 1.2rem;
+    font-size: 16px;
     content: "⭐";
     position: absolute;
     right:-8px;
@@ -17,7 +17,7 @@ body,html{
 }
 
 .star:hover::after{
-    font-size: 1.3rem;
+    font-size: 17px;
 }
 
 main{
@@ -31,7 +31,7 @@ main{
 }
 
 div#moveableRoot{
-    margin-top: 2rem;
+    margin: 16px;
     width: 800px;
     height: 1000px;
     position: relative;
@@ -46,32 +46,35 @@ body{
     background-size:2em 2em;
 }
 
-.moveable{
-    cursor: move;
+.block{
     position:absolute;
     margin: 0px;
-    padding: 1.5rem;
+    padding: 20px;
     border: 1px white solid;
     background-color: rgb(7, 7, 7);
-
-    opacity: 0.0;
     transition: opacity .3s, background-color .3s;
 }
-.moveable>*{
+.block>*{
    margin:0px;
 }
-.moveable *::selection,img::selection{
-    background-color: none;
+.block *::selection,img::selection{
+    background-color: unset;
 }
 
-.moveable:hover{
+[moveable]:hover{
     opacity: 1 !important;
     background-color: black;
 
 }
 
-.moveable[held]{
+[moveable]{
+    cursor: grab;
+    opacity: 0.0;
+}
+
+[moveable][held]{
     filter: invert();
+    cursor: grabbing;
 }
 
 button:hover{
@@ -79,10 +82,10 @@ button:hover{
     scale:1.05;
 }
 a{
+    cursor:alias !important;
     color:#aad3e1;
 }
 a:hover{
-    cursor:alias !important;
     color:#76c8e3;
 }
 
@@ -90,7 +93,6 @@ a,h1,h2,h3,h4,h5,h6,p,button{
     display: inline-block;
     width: max-content;
 }
-
 
 h1:hover,h2:hover,h3:hover,p:hover{
     transition: transform .1s;
@@ -100,10 +102,23 @@ h1:hover,h2:hover,h3:hover,p:hover{
 }
 
 #projectTech{
-    gap:1rem;
+    gap:16px;
     display: flex; 
     flex-direction: row;
-    padding: 1rem;
+    padding: 16px;
     border: 1px white solid;
     background-color: rgb(7, 7, 7);
+}
+
+.hoverpop:hover{
+    scale: 1.1;
+    cursor: default;
+}
+
+.descriptionhover{
+    left: 100px;
+    top:0px; 
+    width: max-content;
+    opacity: 0.0;
+    background-color: black;
 }

@@ -30,29 +30,54 @@ function initMoveable(el,lastele=null){
         moveable.element.parentNode.moveable.children.push(moveable);
     }
 
-    let mousemove = e=>{
-        if(!(e.buttons&1))return;
-        moveable.xa+=(e.x-(moveable.x+moveable.startx))/50;
-        moveable.ya+=(e.y-(moveable.y+moveable.starty))/50;
-    }
-    el.addEventListener("mousedown",e=>{
-        moveable.element.setAttribute("held","true");
-        moveable.startx = e.x-moveable.x;
-        moveable.starty = e.y-moveable.y;
-        removeEventListener("mousemove",mousemove);
-        addEventListener("mousemove",mousemove);
-        addEventListener("mouseup",()=>{
+    if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
+        let touchmove = e=>{
+            moveable.xa+=(e.touches[0].clientX-(moveable.x+moveable.startx))/50;
+            moveable.ya+=(e.touches[0].clientY-(moveable.y+moveable.starty))/50;
+        }
+        el.addEventListener("touchstart",e=>{
+            moveable.element.setAttribute("held","true");
+            moveable.startx = e.touches[0].clientX-moveable.x;
+            moveable.starty = e.touches[0].clientY-moveable.y;
+            removeEventListener("touchmove",touchmove);
+            addEventListener("touchmove",touchmove);
+            addEventListener("touchend",()=>{
+                removeEventListener("touchmove",touchmove);
+                moveable.element.removeAttribute("held");
+            },{once:true});
+            e.stopPropagation();
+        })
+    }else{
+        let mousemove = e=>{
+            if(!(e.buttons&1))return;
+            moveable.xa+=(e.x-(moveable.x+moveable.startx))/50;
+            moveable.ya+=(e.y-(moveable.y+moveable.starty))/50;
+        }
+        el.addEventListener("mousedown",e=>{
+            moveable.element.setAttribute("held","true");
+            moveable.startx = e.x-moveable.x;
+            moveable.starty = e.y-moveable.y;
             removeEventListener("mousemove",mousemove);
-            moveable.element.removeAttribute("held");
-        },{once:true});
-        e.stopPropagation();
-    })
+            addEventListener("mousemove",mousemove);
+            addEventListener("mouseup",()=>{
+                removeEventListener("mousemove",mousemove);
+                moveable.element.removeAttribute("held");
+            },{once:true});
+            e.stopPropagation();
+        })
+    }
+
+    
+
+
+    
     return moveable;
 }
 
 {
 let moveables = [];
-[...document.getElementsByClassName("moveable")].forEach(el=>{
+
+[...document.querySelectorAll("[moveable]")].forEach(el=>{
     let moveable = initMoveable(el,lastele);
     moveables.push(moveable);
     lastele=moveable;
@@ -90,7 +115,7 @@ setInterval(()=>{
             e.ya *=0.95;
             e.x+=e.xa;
             e.y+=e.ya;
-            
+           
             if(e.x<0){
                 e.x=0;
                 e.element.parentElement.moveable.xa+=e.xa/2;
