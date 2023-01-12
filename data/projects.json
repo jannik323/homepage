@@ -6,17 +6,17 @@
         "showcased":true,
         "shortdescription":"The Sequel to Jarlson!"
     },{
-        "name":"Jarlson",
-        "urlName":"jarlson",
+        "name":"Fast Frog Life",
+        "urlName":"fastfroglife",
         "category":"games",
-        "showcased":true,
-        "shortdescription":"My first Unity game!"
+        "showcased":false,
+        "shortdescription":"A game made for the Mini Jam 106: Frogs²!"
     },{
         "name":"Dice-Alien",
         "urlName":"dicealien",
         "category":"games",
         "showcased":false,
-        "shortdescription":"A game for the gmtk2022 jam!"
+        "shortdescription":"A game made for the gmtk2022 jam!"
     },{
         "name":"Speedrun.com id finder",
         "urlName":"srcidfinder",
@@ -36,11 +36,155 @@
         "showcased":true,
         "shortdescription":"A 3D rouge-lite / dungeon crawler inspired by \"the binding of isaac\"!"
     },{
+        "name":"JBlocker Level Editor",
+        "urlName":"jblockerleveleditor",
+        "category":"tools",
+        "showcased":false,
+        "shortdescription":"A web-based level editor for my game JBlocker!"
+    },{
+        "name":"JBlocker",
+        "urlName":"jblocker",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"Weird 3D-Platformer in which you can create levels with just ms-paint!"
+    },{
+        "name":"Jarlson",
+        "urlName":"jarlson",
+        "category":"games",
+        "showcased":true,
+        "shortdescription":"My first Unity game!"
+    },{
+        "name":"JHop",
+        "urlName":"jhop",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"A short platformer with weird movement!"
+    },{
         "name":"HomePage",
         "urlName":"homepage",
         "category":"other",
         "showcased":true,
         "shortdescription":"The Website you are on right now!"
+    },{
+        "name":"Artbreeder+",
+        "urlName":"artbreederplus",
+        "category":"tools",
+        "showcased":false,
+        "shortdescription":"A browser extension that enhances the old version of artbreeder.com!"
+    },{
+        "name":"Jchat",
+        "urlName":"jchat",
+        "category":"other",
+        "showcased":false,
+        "shortdescription":"A online chat website!"
+    },{
+        "name":"SRC Mover",
+        "urlName":"srcmover",
+        "category":"tools",
+        "showcased":true,
+        "shortdescription":"A website that i created to move speedruns from one category to another for speedrun.com!"
+    },{
+        "name":"SRC Mover NodeJS",
+        "urlName":"srcmovernode",
+        "category":"tools",
+        "showcased":false,
+        "shortdescription":"A nodejs program that i created to move speedruns from one category to another for speedrun.com!"
+    },{
+        "name":"Ball Buster TD",
+        "urlName":"ballbustertd",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"A towerdefence web-game with BALLS!"
+    },{
+        "name":"Snake Game C#",
+        "urlName":"snakegamecsharp",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"Snake game made in c#!"
+    },{
+        "name":"Tic-Tac-Toe Online",
+        "urlName":"tictactoeonline",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"Program to host a tic-tac-toe game website ,where you can play against other people online!"
+    },{
+        "name":"Bezier Maker",
+        "urlName":"beziermaker",
+        "category":"other",
+        "showcased":false,
+        "shortdescription":"Program to play around with a bezier curve!"
+    },{
+        "name":"Pixel Online",
+        "urlName":"pixelonline",
+        "category":"other",
+        "showcased":true,
+        "shortdescription":"A Website where you can draw on a pixel canvas with others!"
+    },{
+        "name":"Worms maybe",
+        "urlName":"wormsmaybe",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"Game that is simmilar to worms, with destructable terrain!"
+    },{
+        "name":"Landscape Miner",
+        "urlName":"landscapeminer",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"Landscape destruction web-game , made for experimentation!"
+    },{
+        "name":"J3DGame",
+        "urlName":"j3dgame",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"\"fake\" 3D web-game made with javascript!"
+    },{
+        "name":"Ball Online",
+        "urlName":"ballonline",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"Online Racing web-game with Balls!"
+    },{
+        "name":"JAdventure",
+        "urlName":"jadventure",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"A short adventure metroidvania-style web-game!"
+    },{
+        "name":"JPlatformer",
+        "urlName":"jplatformer",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"A short platformer web-game!"
+    },{
+        "name":"Connect Any",
+        "urlName":"connectany",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"connect 4 web-game, but you can change the win condition and play with as many players as you want!"
+    },{
+        "name":"Agile Snake",
+        "urlName":"agilesnake",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"Snake web-game , but movement isnt grid based!"
+    },{
+        "name":"JAnt",
+        "urlName":"jant",
+        "category":"other",
+        "showcased":false,
+        "shortdescription":"Web based \"langton's ant\" -like interactive simulation!"
+    },{
+        "name":"JLife",
+        "urlName":"jlife",
+        "category":"other",
+        "showcased":false,
+        "shortdescription":"Web based clone of \"conway's game of life\" !"
+    },{
+        "name":"tetis j",
+        "urlName":"tetisj",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"Web based clone of tetris!"
     }
     
 ]

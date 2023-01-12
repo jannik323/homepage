@@ -12,6 +12,19 @@ if(webpageVisitsEle!=null){
     .catch(errordata=>console.error(errordata));
 }
 
+// let discordLogin = document.getElementById("discordlogin");
+// if(getCookie("discordToken")!=null){
+//     fetch("/data/username").then(response=>{
+//         if (!response.ok) {
+//             console.error(response.status);
+//             throw new Error("Request failed with status "+response.status);
+//         }
+//         return response.json();
+//     }).then(data=>{
+//         discordLogin.innerText="Hi "+ data+ "!";
+//     }).catch(errordata=>console.error(errordata));
+// }
+
 fetch("/data/projects?showcased=true").then(response=>{
     if (!response.ok) {
         console.error(response.status);
@@ -73,3 +86,19 @@ function track(self){
         self.innerText+= "\n x: "+e.clientX+", y:"+e.clientY;
     })
 }
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+  }

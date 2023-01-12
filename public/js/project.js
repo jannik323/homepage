@@ -1,10 +1,11 @@
 let projectName = document.location.pathname.split("/")[2];
 fetch("/data/"+projectName+".json").then(response=>{
-if (!response.ok) {
-    console.error(response.status);
-    throw new Error("Request failed with status "+response.status);
-}
-return response.json();
+    if (!response.ok) {
+        alert("It seems like this project could not be found. Try again later.");
+        location.replace("/");
+        throw new Error("Request failed with status "+response.status);
+    }
+    return response.json();
 }).then(data=>{
     let projectNameElement =  document.getElementById("projectName");
     projectNameElement.innerText=data.name;
@@ -20,6 +21,8 @@ return response.json();
             projectStateElement.style.color="red";
             break;
         case "paused":
+        case "discontinued":
+        case "lost interest":
             projectStateElement.style.color="#bcac7a";
             break;
         case "in progress":
@@ -92,6 +95,9 @@ return response.json();
         element.moveable.y = newimgposy;
         element.querySelector("img").onload=()=>{
             newimgposy+=element.clientHeight+20;
+            if(newimgposy>800){
+                moveableRoot.style.height=(newimgposy+200)+"px";
+            }
             imgCount++;
             addImageElement();
         }

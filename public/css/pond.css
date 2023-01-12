@@ -96,7 +96,7 @@ a,h1,h2,h3,h4,h5,h6,p,button{
 
 h1:hover,h2:hover,h3:hover,p:hover{
     transition: transform .1s;
-    transform:rotate(5deg);
+    transform:rotate(4deg);
     text-decoration:underline;
     cursor: default;
 }
@@ -121,4 +121,22 @@ h1:hover,h2:hover,h3:hover,p:hover{
     width: max-content;
     opacity: 0.0;
     background-color: black;
+}
+
+#discordlogin {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    padding: 14px 24px;
+    align-items: center;
+    justify-content: center;
+    opacity: .8;
+    transition: opacity .5s;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#discordlogin:hover{
+    opacity: 1;
 }

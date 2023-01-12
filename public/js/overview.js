@@ -46,6 +46,6 @@ fetch("/data/projects?category="+categoryName).then(response=>{
     gameLinksElement.style.height = (newlinkpos)+"px";
 
     if(gameLinksElement.clientHeight>700){
-        document.getElementById("moveableRoot").style.height=(gameLinksElement.clientHeight+200)+"px";
+        moveableRoot.style.height=(gameLinksElement.clientHeight+200)+"px";
     }
 }).catch(errordata=>console.error(errordata));

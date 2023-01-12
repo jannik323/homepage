@@ -1,5 +1,5 @@
 {"name":"Jarlslice",
-"description":" Bla Bla Bla \n Bla",
+"description":"Jarlslice was originally just a project to try out mesh slicing, which is one of the primary things you do in the game.\n\nAfter working on the project for a while i decided to turn it into \"jarlson 2\", but i didnt't want to name it \"jarlson 2\".\nSo jarlson + slice = jarlslice... i know , how creative :P.I think the game is a big step up from jarlson , since it got so many new features and is just overall better.The two games don't really have too much simmilar , other than having the same core idea and having some modified karlson movement code.\n\nI've updated the game quite a few times , adding a leveleditor and multiplayer. Both of them are a little limited,but work and are really fun to play.",
 "date":null,
 "state":"finished",
 "tech":[
@@ -7,7 +7,10 @@
     "csharp"
 ],
 "imgs":[
-
+    "https://img.itch.zone/aW1hZ2UvMTcxOTYwMS8xMDEzMDE3My5wbmc=/794x1000/6GR3K0.png",
+    "https://i.ibb.co/Jr9mpQ5/GIF-26-09-2022-16-34-31.gif",
+    "https://img.itch.zone/aW1hZ2UvMTcxOTYwMS8xMDEzMDIyMy5wbmc=/794x1000/LGyaay.png",
+    "https://i.ibb.co/tQVFWtJ/GIF-26-09-2022-16-43-05.gif"
 ],
 "links":[
     {
