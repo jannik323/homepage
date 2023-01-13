@@ -5,10 +5,14 @@ const statData = require('./data/stats.json');
 let projectsData = require('./data/projects.json');
 const fs = require("fs");
 //const { validAuth, discordrouter, findUserName } = require('./auth/discord');
-
+const https = require('https');
 const app = express();
-const PORT = 8080;
+//const PORT = parseInt(process.env.PORT) || 80;
 // let ALLOWED_ORIGINS = ["http://localhost:8080","https://localhost:3000"];
+
+//const privateKey  = fs.readFileSync('./ssl/key.pem', 'utf8');
+//const certificate = fs.readFileSync('./ssl/cert.pem', 'utf8');
+//const credentials = {key: privateKey, cert: certificate};
 
 
 startServer();
@@ -33,7 +37,7 @@ function startServer(){
 
     // Add routes
     app.get('/', (req, res) => {
-        statData.pageVisits++;
+//        statData.pageVisits++;
         res.sendFile(join(__dirname, 'public', 'home.html'));
     });
 
@@ -84,25 +88,33 @@ function startServer(){
         res.status(404).sendFile(join(__dirname, 'public', 'error.html'));
     });
 
-    app.listen(PORT, () => {
-        console.log(`Server started on port ${PORT}`);
-    });
-
-
     //save stats and auth
-    setInterval(()=>{
-        fs.writeFile('./data/stats.json', JSON.stringify(statData),()=>{
-            console.log("saved stats to file: "+ new Date().toLocaleString());
-        });
+   // setInterval(()=>{
+      //  fs.writeFile('./data/stats.json', JSON.stringify(statData),()=>{
+    //        console.log("saved stats to file: "+ new Date().toLocaleString());
+  //      });
 
         // fs.writeFile('./data/validauth.json', JSON.stringify(validAuth),()=>{
         //     console.log("saved validauth to file: "+ new Date().toLocaleString());
         // });
-    },30*60000); // 30 minutes
+//    },30*60000); // 30 minutes
 
     fs.watchFile("./data/projects.json",{interval:60000},()=>{
         projectsData=JSON.parse(fs.readFileSync("./data/projects.json","utf-8"));
         console.log("projects object is now up to date: "+ new Date().toLocaleString());
     })
 
+    require("greenlock-express")
+    .init({
+        packageRoot: __dirname,
+        configDir: "./greenlock.d",
+        maintainerEmail: "jannik323@outlook.de",
+        cluster: false
+    }).serve(app);
+
+    //app.listen(PORT, () => {
+    //	console.log("server is running at port "+PORT);
+    //});
+
 }
+
