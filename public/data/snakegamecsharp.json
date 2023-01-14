@@ -1,0 +1,19 @@
+{"name":"Snake C#",
+"description":"Originally i wanted to create snake in C++ ,but i ended up creating it in C# instead.💀<br><br>In this super cool snake game you can snake around like a snake. Yea no, this is just a snake clone.",
+"date":null,
+"state":"finished",
+"tech":[
+    "csharp"
+],
+"imgs":[
+    "/imgs/projects/snakecsharp.png",
+    "/imgs/projects/snakecsharp2.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/SnakeGameSharp"
+    },{
+        "name":"Download",
+        "url":"https://github.com/jannik323/SnakeGameSharp/releases/download/v1/SnakeGame.exe"
+    }
+]}

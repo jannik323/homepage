@@ -1,0 +1,19 @@
+{"name":"JDungeon",
+"description":"A 3D dungeon crawler , rouge-lite or whatever you wanna call it.<br><br>My inspiration was the game \"The Binding of Isaac\" which i quite like.The game got a bunch of cool features and around 24 Items.If you have played \"The Binding of Isaac\" before you will recognize some of the mechanics.Figuring out the room generation was a lot of work and im pretty sure there is still some game breaking bug out there, but afaik the game works as it should.<br><br>On a sidenote , the game is pretty hard, so dont get confused why you can't even clear one floor.",
+"date":null,
+"state":"finished",
+"tech":[
+    "csharp",
+    "unity"
+],
+"imgs":[
+    "https://img.itch.zone/aW1hZ2UvMTQyODcwNS84MzI4MDg0LmpwZw==/original/%2BilcKI.jpg",
+    "https://img.itch.zone/aW1hZ2UvMTQyODcwNS84MzI4MDc1LmdpZg==/794x1000/dTczfN.gif",
+    "https://img.itch.zone/aW1hZ2UvMTQyODcwNS84MzI4NzQyLmpwZw==/794x1000/8hGgy%2B.jpg",
+    "https://img.itch.zone/aW1hZ2UvMTQyODcwNS84MzI4NzQzLmpwZw==/794x1000/JFCRsE.jpg"
+],"links":[
+    {
+        "name":"itch.io",
+        "url":"https://jannik323.itch.io/jdungeon"
+    }
+]}

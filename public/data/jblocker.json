@@ -1,0 +1,19 @@
+{"name":"JBlocker",
+"description":"JBlock is a platformer game in which levels are saved as simple pngs.<br><br>I also created a dedicated <a href='/projects/jblockerleveleditor'>level editor</a> which is just a weird web-based ms-paint with predefined colors.I made this because i thought the idea of creating levels with just an image would be easy to pick up and use. Which it was , but making them was a little confusing to people, even if they just needed ms-paint.<br><br>I think i made this after i made <a href='/projects/jdungeon'>JDungeon</a> , but it might just be the other way around...<br><br>Either way they both use parts of the same system to spawn in levels.",
+"date":null,
+"state":"finished",
+"tech":[
+    "csharp",
+    "unity"
+],
+"imgs":[
+    "https://img.itch.zone/aW1hZ2UvMTM2MDE3Ni83OTIyNjg3LnBuZw==/794x1000/KGeKEV.png",
+    "https://cdn.discordapp.com/attachments/872625271310794763/933739466479271986/GIF_20.01.2022_16-04-55.gif",
+    "https://img.itch.zone/aW1hZ2UvMTM2MDE3Ni83OTIyNjg1LnBuZw==/794x1000/g8423f.png",
+    "https://img.itch.zone/aW1hZ2UvMTM2MDE3Ni83OTIyNjg0LnBuZw==/794x1000/7QZFhC.png"
+],"links":[
+    {
+        "name":"itch.io",
+        "url":"https://jannik323.itch.io/jblocker"
+    }
+]}

@@ -1,0 +1,18 @@
+{"name":"J3DGame",
+"description":"Calling this a \"game\" might a stretch, as you can't do anything ,but walk around.<br><br>This was mainly just me wanting to reproduce this \"fake\" 3D effect .To my knowledge the original doom did something simmilar.<br><br>Move around with w,a,s,d",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/j3d.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/j3dgame"
+    },{
+        "name":"Play",
+        "url":"https://jannik323.github.io/j3dgame/"
+    }
+]}

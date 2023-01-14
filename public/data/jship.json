@@ -1,0 +1,16 @@
+{"name":"JShip",
+"description":"Space exploration and spaceship builder game.<br><br> You can create and fly around with self-made spaceships. Mine resources with a laser and buy more parts and expand your spaceship more.The game is in a working state ,but i lost interest at one point and stopped working on it further.<br><br>I might touch it up a little and just release it as it is, but i dont know yet.<br><br>Oh and i almost forgot the coolest part:\nlogic gates and wires -> you can connect pretty much all interactive parts with sensors and logic gates and in theory build a calculator in the game itself.",
+"date":null,
+"state":"on pause",
+"tech":[
+    "csharp",
+    "unity"
+],
+"imgs":[
+    "https://cdn.discordapp.com/attachments/872625271310794763/963856674773417994/GIF_13.04.2022_19-38-11.gif",
+    "https://cdn.discordapp.com/attachments/872625271310794763/973560055939072050/unknown.png",
+    "https://cdn.discordapp.com/attachments/872625271310794763/965231141957292072/GIF_17.04.2022_11-52-52.gif",
+    "https://cdn.discordapp.com/attachments/872625271310794763/971461709111914507/GIF_04.05.2022_19-19-42.gif",
+    "https://cdn.discordapp.com/attachments/872625271310794763/965230954383835156/GIF_17.04.2022_11-03-02.gif"
+],"links":[
+]}

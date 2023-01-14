@@ -1,0 +1,19 @@
+{"name":"JAdventure",
+"description":"This is pretty much a fork of <a href='/projects/jplatformer'>jplatformer</a>, but instead of it being a silly boring platformer , its a super cool adventure metroid-vania style game, with lots of platforming.<br><br>Controls:<br>w,a,s,d to move",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/jadventure.png",
+    "/imgs/projects/jadventure2.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/jadventure"
+    },{
+        "name":"Play",
+        "url":"https://jannik323.github.io/jadventure/"
+    }
+]}

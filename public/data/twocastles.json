@@ -1,0 +1,16 @@
+{"name":"Two Castles",
+"description":"Wii homebrew game i made for fun , because i thought it would be a funny thing to try.<br><br>I first had to softmod my wii, which is not something i have done before.In fact i have not softmodded any console,so that was a new thing.<br><br>I did eventually get everything to work, got all the needed dev tools and created a very bare bones two player game.I made the game in C which i honestly didnt enjoy, but didnt want to risk switching over to C++ and spending the next 10 hours trying to get it to work again, so i just stuck with C. I might try to make an actual good game in the future.<br><br>The game consists of creating walls ,shooting walls of your oponent , avoiding opponents bullets and shooting at the opponent to push into the abyss.",
+"date":null,
+"state":"discontinued",
+"tech":[
+    "c"
+],
+"imgs":[
+    "/imgs/projects/twocastles/nothn.png",
+    "/imgs/projects/twocastles/walls.png"
+],"links":[
+    {
+        "name":"Download",
+        "url":"/download/twocastles.zip"
+    }
+]}

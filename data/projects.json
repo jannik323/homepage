@@ -1,10 +1,28 @@
 [
     {
+        "name":"Rocket Fun",
+        "urlName":"rocketfun",
+        "category":"games",
+        "showcased":true,
+        "shortdescription":"A android game where you avoid wierd floating rocks!"
+    },{
         "name":"Jarlslice",
         "urlName":"jarlslice",
         "category":"games",
         "showcased":true,
         "shortdescription":"The Sequel to Jarlson!"
+    },{
+        "name":"Two Castles",
+        "urlName":"twocastles",
+        "category":"games",
+        "showcased":false,
+        "shortdescription":"Badly made 2 player wii homebrew game!"
+    },{
+        "name":"Fragments of Nusan",
+        "urlName":"fragmentsofnusan",
+        "category":"games",
+        "showcased":true,
+        "shortdescription":"A puzzle game inspired by \"fragments of euclid\"!"
     },{
         "name":"Fast Frog Life",
         "urlName":"fastfroglife",
@@ -15,7 +33,7 @@
         "name":"Dice-Alien",
         "urlName":"dicealien",
         "category":"games",
-        "showcased":false,
+        "showcased":true,
         "shortdescription":"A game made for the gmtk2022 jam!"
     },{
         "name":"Speedrun.com id finder",
@@ -35,6 +53,12 @@
         "category":"games",
         "showcased":true,
         "shortdescription":"A 3D rouge-lite / dungeon crawler inspired by \"the binding of isaac\"!"
+    },{
+        "name":"JShip",
+        "urlName":"jship",
+        "category":"games",
+        "showcased":true,
+        "shortdescription":"A 2D space building game!"
     },{
         "name":"JBlocker Level Editor",
         "urlName":"jblockerleveleditor",
@@ -69,7 +93,7 @@
         "name":"Artbreeder+",
         "urlName":"artbreederplus",
         "category":"tools",
-        "showcased":false,
+        "showcased":true,
         "shortdescription":"A browser extension that enhances the old version of artbreeder.com!"
     },{
         "name":"Jchat",
@@ -93,7 +117,7 @@
         "name":"Ball Buster TD",
         "urlName":"ballbustertd",
         "category":"games",
-        "showcased":false,
+        "showcased":true,
         "shortdescription":"A towerdefence web-game with BALLS!"
     },{
         "name":"Snake Game C#",
@@ -156,6 +180,54 @@
         "showcased":false,
         "shortdescription":"A short platformer web-game!"
     },{
+        "name":"JPowdertool",
+        "urlName":"jpowdertool",
+        "category":"game",
+        "showcased":true,
+        "shortdescription":"Powdertool clone , with funny elements to play around with!"
+    },{
+        "name":"Java Pathfinding",
+        "urlName":"javapathfinding",
+        "category":"other",
+        "showcased":true,
+        "shortdescription":"A little A* pathfinding simulation, with changeable obstacles!"
+    },{
+        "name":"Sorting Visualiser",
+        "urlName":"sortvisualiser",
+        "category":"other",
+        "showcased":false,
+        "shortdescription":"A sorting visualiser made in java!"
+    },{
+        "name":"TopDown Water Sim",
+        "urlName":"watersim",
+        "category":"other",
+        "showcased":true,
+        "shortdescription":"A weird topdown 2D water simulator!"
+    },{
+        "name":"Reverse Kinematiks",
+        "urlName":"reversekinematiks",
+        "category":"other",
+        "showcased":false,
+        "shortdescription":"A simulation about revserse kinematiks!"
+    },{
+        "name":"Forward Kinematiks",
+        "urlName":"forwardkinematiks",
+        "category":"other",
+        "showcased":false,
+        "shortdescription":"A simulation about forward kinematiks!"
+    },{
+        "name":"Color War",
+        "urlName":"colorwar",
+        "category":"other",
+        "showcased":false,
+        "shortdescription":"Watch a bunch of colors fight!"
+    },{
+        "name":"Unnamed Java Game",
+        "urlName":"unnamed1",
+        "category":"game",
+        "showcased":false,
+        "shortdescription":"A game in which you shoot at and avoid falling Balls!"
+    },{
         "name":"Connect Any",
         "urlName":"connectany",
         "category":"games",
@@ -167,6 +239,12 @@
         "category":"games",
         "showcased":false,
         "shortdescription":"Snake web-game , but movement isnt grid based!"
+    },{
+        "name":"Java Snake",
+        "urlName":"javasnake",
+        "category":"game",
+        "showcased":false,
+        "shortdescription":"A snake clone made in java!"
     },{
         "name":"JAnt",
         "urlName":"jant",

@@ -1,0 +1,18 @@
+{"name":"Rocket Fun",
+"description":"A game iv'e made to learn android studio.<br><br>The gameplay is fairly simple, consisting of flying left ,right and by combining both flying up. You need to dodge weird floating rocks/obstacles and get as much height as you can.I also added coins which can be collected to buy ship skins in a shop. Highscores get saved along with the currently selected and bought ships.<br><br>Making it was pretty fun ,as i have not created any mobile applications before.<br><br>Also noteworthy is that i created all the art. Not like there is much , but i think the graphics are pretty ok looking.",
+"date":null,
+"state":"finished",
+"tech":[
+    "android",
+    "java"
+],
+"imgs":[
+    "/imgs/projects/rocketfun/rf1.png",
+    "/imgs/projects/rocketfun/rf2.png",
+    "/imgs/projects/rocketfun/rf3.png"
+],"links":[
+    {
+        "name":"Download",
+        "url":"/download/rocketfun.apk"
+    }
+]}

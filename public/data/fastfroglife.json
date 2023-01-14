@@ -1,0 +1,21 @@
+{"name":"Fast Frog Life",
+"description":"A game made for the Mini Jam 106: Frogs²m, which was also the first game jam i participated in.<br><br>The gameplay is pretty much a platformer with changing movement over time, but i must admit the water movement could be better.<br><br>I landed in Rank#60 with this game which is pretty good id say (use of the limitation #25 :O).The game jam was pretty fun to do and im sure i learned a few things, cause there are definetly things i would have done different.A Web-Build is also available on itch.io , but i would advice downloading the game.",
+"date":null,
+"state":"finished",
+"tech":[
+    "csharp","unity"
+],
+"imgs":[
+    "https://img.itch.zone/aW1hZ2UvMTUzMjEwOS84OTM2MDA1LmpwZw==/794x1000/zzn%2Bqs.jpg",
+    "https://img.itch.zone/aW1hZ2UvMTUzMjEwOS84OTM2MDA3LmpwZw==/794x1000/rIbw3X.jpg",
+    "https://img.itch.zone/aW1hZ2UvMTUzMjEwOS84OTM2MDA0LmpwZw==/794x1000/SRXV%2Fk.jpg",
+    "https://img.itch.zone/aW1hZ2UvMTUzMjEwOS84OTM2MDA2LmpwZw==/794x1000/qebCDV.jpg"
+],"links":[
+    {
+        "name":"itch.io",
+        "url":"https://jannik323.itch.io/fast-frog-life"
+    },{
+        "name":"Game Jam",
+        "url":"https://itch.io/jam/mini-jam-106-frogs/rate/1532109"
+    }
+]}

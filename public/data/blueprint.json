@@ -1,0 +1,15 @@
+{"name":"Placeholder",
+"description":"Ipson",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript"
+],
+"imgs":[
+    "/imgs/projects/homepage.png"
+],"links":[
+    {
+        "name":"Download",
+        "url":"/"
+    }
+]}

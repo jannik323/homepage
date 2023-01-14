@@ -1,0 +1,21 @@
+{"name":"Landscape Miner",
+"description":"Prototype version of <a href='/projects/wormsmaybe'>Worms maybe</a><br><br>Move around with w,a,s,d and use your super cool drill with spacebar.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript",
+    "html",
+    "css"
+],
+"imgs":[
+    "/imgs/projects/landscape.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/landscape_miner"
+    },
+    {
+        "name":"Play",
+        "url":"https://jannik323.github.io/landscape_miner/"
+    }
+]}

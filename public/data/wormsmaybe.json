@@ -1,0 +1,21 @@
+{"name":"Worms maybe",
+"description":"\"Worms maybe\" is the name of the repository and because it never got an actual name, means its now stuck with it. This game was originally just an idea / me wondering how a game like <a href='https://en.wikipedia.org/wiki/Worms_(series)'>worms</a> could work.<br><br>Im fairly certain they didnt have such a mess of code for their game, but the result i got was acceptable.<br><br>The game is somewhat playable , but sometimes the other player could move before the previous player has ended their turn.Which would defeat the whole purpose of planning precice shots ,if the other player can just move away.",
+"date":null,
+"state":"never finished💀",
+"tech":[
+    "javascript",
+    "html",
+    "css"
+],
+"imgs":[
+    "/imgs/projects/worms.png",
+    "/imgs/projects/worms2.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/worms-maybe"
+    },{
+        "name":"Play",
+        "url":"https://jannik323.github.io/worms-maybe/"
+    }
+]}

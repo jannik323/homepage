@@ -1,0 +1,15 @@
+{"name":"Fragments of Nusan",
+"description":"A game im making , heavily inspired by \"fragments of euclid\"by NuSan.<br><br>It got a look of antichamber, or so i've been told.This was also the first time i worked with shaders or rather made shaders.Pretty fun to play around with, but hard to do right.<br><br>The game only got a few levels and still got a few visual bugs.I've also lost motivation to work on it ,but ill continue someday.",
+"date":null,
+"state":"unfinished",
+"tech":[
+    "csharp",
+    "unity"
+],
+"imgs":[
+    "https://cdn.discordapp.com/attachments/872625271310794763/1042126997662466088/image.png",
+    "https://cdn.discordapp.com/attachments/872625271310794763/1040024655605551174/GIF_09.11.2022_23-03-57.gif",
+    "https://cdn.discordapp.com/attachments/872625271310794763/1038465258479681648/GIF_05.11.2022_15-48-31.gif"
+],"links":[
+    
+]}

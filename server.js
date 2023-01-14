@@ -1,18 +1,18 @@
-const express = require('express');
-const { join } = require('path');
-//const cookieParser = require('cookie-parser');
 const statData = require('./data/stats.json');
 let projectsData = require('./data/projects.json');
+let projectsDataCategory;
+initProjectsDataCategory();
+
+const express = require('express');
+const { join } = require('path');
 const fs = require("fs");
-//const { validAuth, discordrouter, findUserName } = require('./auth/discord');
 const https = require('https');
 const app = express();
-//const PORT = parseInt(process.env.PORT) || 80;
-// let ALLOWED_ORIGINS = ["http://localhost:8080","https://localhost:3000"];
 
-//const privateKey  = fs.readFileSync('./ssl/key.pem', 'utf8');
-//const certificate = fs.readFileSync('./ssl/cert.pem', 'utf8');
-//const credentials = {key: privateKey, cert: certificate};
+//const cookieParser = require('cookie-parser');
+//const { validAuth, discordrouter, findUserName } = require('./auth/discord');
+
+// let ALLOWED_ORIGINS = ["http://localhost:8080","https://localhost:3000"];
 
 
 startServer();
@@ -35,10 +35,20 @@ function startServer(){
     // Serve static files
     app.use(express.static(join(__dirname, 'public')));
 
-    // Add routes
     app.get('/', (req, res) => {
-//        statData.pageVisits++;
         res.sendFile(join(__dirname, 'public', 'home.html'));
+    });
+
+    app.get("/download/:file",(req, res) => {
+        let prefix = join(__dirname, 'download');
+        let downloadPath = join(prefix,req.params.file);
+        if(downloadPath.startsWith(prefix)){
+            if(fs.existsSync(downloadPath)){
+                res.download(downloadPath);
+            }else{
+                res.status(404).sendFile(join(__dirname, 'public', 'error.html'));
+            }
+        }
     });
 
     app.get('/about', (req, res) => {
@@ -65,12 +75,16 @@ function startServer(){
         let data = projectsData;
 
         if(req.query.category!=null){
-            data = data.filter(e=>e.category==req.query.category);
+            data = projectsDataCategory[req.query.category]
+            if(data==null){
+                data = [];
+            }
         }
 
         if(req.query.showcased!=null){
             data = data.filter(e=>e.showcased);
         }
+
         res.json(data);
     });
 
@@ -101,6 +115,7 @@ function startServer(){
 
     fs.watchFile("./data/projects.json",{interval:60000},()=>{
         projectsData=JSON.parse(fs.readFileSync("./data/projects.json","utf-8"));
+        initProjectsDataCategory();
         console.log("projects object is now up to date: "+ new Date().toLocaleString());
     })
 
@@ -112,9 +127,18 @@ function startServer(){
         cluster: false
     }).serve(app);
 
-    //app.listen(PORT, () => {
-    //	console.log("server is running at port "+PORT);
-    //});
+    // app.listen(80, () => {
+    // 	console.log("server is running at port 80");
+    // });
 
 }
 
+function initProjectsDataCategory(){
+    projectsDataCategory = {};
+    projectsData.forEach(e=>{
+        if(projectsDataCategory[e.category]==null){
+            projectsDataCategory[e.category]=[];
+        }
+        projectsDataCategory[e.category].push(e);
+    })
+}

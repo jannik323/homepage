@@ -1,0 +1,18 @@
+{"name":"JHop",
+"description":"This is the game where i let my intrusive thoughts win.<br><br> I thought, whats the worst way you could control a player in a game and then this game came out.There is honestly not much to talk about other than this being my second unity game , which was just me messing around.",
+"date":null,
+"state":"finished",
+"tech":[
+    "csharp",
+    "unity"
+],
+"imgs":[
+    "https://img.itch.zone/aW1hZ2UvMTM1MzM4Ny83ODc4MzQ3LnBuZw==/original/7p50yX.png",
+    "https://img.itch.zone/aW1hZ2UvMTM1MzM4Ny83ODc4MzU0LnBuZw==/original/Lk0VV5.png",
+    "https://img.itch.zone/aW1hZ2UvMTM1MzM4Ny83ODc4Mzk1LnBuZw==/original/IBTwsV.png"
+],"links":[
+    {
+        "name":"itch.io",
+        "url":"https://jannik323.itch.io/jhop"
+    }
+]}

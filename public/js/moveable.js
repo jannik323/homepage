@@ -22,6 +22,9 @@ function initMoveable(el,lastele=null){
         element:el,
         xa:0,
         ya:0,
+        relmousex:0,
+        relmousey:0,
+        held:false,
         lastele:lastele,
         children:[],
     }
@@ -32,35 +35,40 @@ function initMoveable(el,lastele=null){
 
     if(navigator.userAgent.toLowerCase().match(/mobile/i)) {
         let touchmove = e=>{
-            moveable.xa+=(e.touches[0].clientX-(moveable.x+moveable.startx))/50;
-            moveable.ya+=(e.touches[0].clientY-(moveable.y+moveable.starty))/50;
+            moveable.relmousex=e.touches[0].clientX;
+            moveable.relmousey=e.touches[0].clientY;
         }
         el.addEventListener("touchstart",e=>{
+            moveable.held=true;
             moveable.element.setAttribute("held","true");
             moveable.startx = e.touches[0].clientX-moveable.x;
             moveable.starty = e.touches[0].clientY-moveable.y;
+            touchmove(e);
             removeEventListener("touchmove",touchmove);
             addEventListener("touchmove",touchmove);
             addEventListener("touchend",()=>{
                 removeEventListener("touchmove",touchmove);
+                moveable.held=false;
                 moveable.element.removeAttribute("held");
             },{once:true});
             e.stopPropagation();
         })
     }else{
         let mousemove = e=>{
-            if(!(e.buttons&1))return;
-            moveable.xa+=(e.x-(moveable.x+moveable.startx))/50;
-            moveable.ya+=(e.y-(moveable.y+moveable.starty))/50;
+            moveable.relmousex=e.x;
+            moveable.relmousey=e.y;
         }
         el.addEventListener("mousedown",e=>{
+            moveable.held=true;
             moveable.element.setAttribute("held","true");
             moveable.startx = e.x-moveable.x;
             moveable.starty = e.y-moveable.y;
+            mousemove(e);
             removeEventListener("mousemove",mousemove);
             addEventListener("mousemove",mousemove);
             addEventListener("mouseup",()=>{
                 removeEventListener("mousemove",mousemove);
+                moveable.held=false;
                 moveable.element.removeAttribute("held");
             },{once:true});
             e.stopPropagation();
@@ -98,11 +106,16 @@ function revealMoveable(){
     lastele = lastele.lastele;
     setInterval(revealMoveable,50);
 }
-
-setInterval(()=>{
+loop();
+function loop(){
     moveableContainers.forEach(con=>{
         for(let i = 0;i<con.length;i++){
             let e = con[i];
+
+            if(e.held){
+                e.xa+=(e.relmousex-(e.x+e.startx))/50;
+                e.ya+=(e.relmousey-(e.y+e.starty))/50;
+            }
 
             if(globalforce.x!=0){
                 e.xa+=globalforce.x;
@@ -147,8 +160,8 @@ setInterval(()=>{
             }
         };
     })
-    
-},10);
+    requestAnimationFrame(loop);
+}
 
 function changeGlobalForce(x,y=0){
     globalforce.x=x;

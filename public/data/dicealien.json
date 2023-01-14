@@ -1,0 +1,19 @@
+{"name":"Dice-Alien",
+"description":"Another game-jam game i've made.This one was for the gmtk2022 jam.<br><br>Unfortunately i had to remove it from the listing , as i had to update it after the time limit. The game was fully done a few hours before the deadline,but i had to leave on the day of the deadline and didnt check if the final build worked.Turns out the only feedback i'd get is that my game doesnt work.<br><br>Basically the menu canvas was set in the wrong mode and wasn't visible/reachable, because of that i had to remove it from the game jam.<br><br>It was still alot of fun to make and i think the game is pretty cool and fun to play.If you like grapples in games, this might be a game you like.",
+"date":null,
+"state":"finished",
+"tech":[
+    "csharp",
+    "unity"
+],
+"imgs":[
+    "https://img.itch.zone/aW1hZ2UvMTYxOTk3Mi85NDg5NDI2LmpwZw==/794x1000/ulfj%2FO.jpg",
+    "https://img.itch.zone/aW1hZ2UvMTYxOTk3Mi85NDg5NDI5LmpwZw==/794x1000/fbUqye.jpg",
+    "https://img.itch.zone/aW1hZ2UvMTYxOTk3Mi85NDg5NDI4LmpwZw==/794x1000/A8E2B5.jpg",
+    "https://img.itch.zone/aW1hZ2UvMTYxOTk3Mi85NDg5NDI3LmpwZw==/794x1000/B5hN5X.jpg"
+],"links":[
+    {
+        "name":"itch.io",
+        "url":"https://jannik323.itch.io/dice-alien"
+    }
+]}

@@ -1,0 +1,19 @@
+{"name":"Agile Snake",
+"description":"As all people know, to learn a programming language, you must create a snake clone in it.<br><br>Is what i thought when i created this snake clone with a twist.<br><br>its pretty much snake ,but without the iconic grid movement and more special apples.<br>Move with w,a,d and try not to go out of the red bounds as that might crash your browser lol. Beginner me, thought it would be smart to just reload the page, once you collide with the border. Which isn't such a bad idea, but if the update loop continues and the page gets reloaded again and again(thus not being able to finish reloading) it might create some problems.<br>Just make sure to not die.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/snakeng1.png",
+    "/imgs/projects/snakeng2.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/jsnake_ng"
+    },{
+        "name":"Play",
+        "url":"https://jannik323.github.io/jsnake_ng/"
+    }
+]}

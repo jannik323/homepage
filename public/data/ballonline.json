@@ -1,0 +1,15 @@
+{"name":"Ball Online",
+"description":"A online racing game, which i made ,because i wanted to try making a multiplayer game with the socket.io package i found out about.<br><br>Worked pretty well,cheating was just very easy.<br><br>I might make a new version, now that i've got some more experience with backend programming and with node.js. That version will use the websockets without socket.io , as using that package might be unnecessary.(2023)",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","nodejs","express-js","html","css"
+],
+"imgs":[
+    "/imgs/projects/ballonline.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/ball_online"
+    }
+]}

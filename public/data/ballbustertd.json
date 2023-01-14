@@ -1,0 +1,27 @@
+{"name":"Ball Buster Td",
+"description":"A funny web tower-defence game with lots of balls.<br><br>The game is pretty convoluted for a plain javascript game.It got a level editor,a bunch of maps,unlocks, endless mode,lots of differnt towers,fancy settings and cool funny sounds.<br>It might be a bit unoptimised , as it will run pretty slow (to be fair,there is a bunch of collision detection going on).But if you can sit that aside it can be pretty entertaining.<br><br>Loading in Maps is pretty easy, you just need to click \"Add Map\" and click \"Next Map\" until the imported map is selected.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript",
+    "html",
+    "css"
+],
+"imgs":[
+    "https://img.itch.zone/aW1hZ2UvMTE5OTAyNy83MDA2MzgzLmdpZg==/794x1000/t%2FD497.gif",
+    "https://img.itch.zone/aW1hZ2UvMTE5OTAyNy83MDA2Mzg2LnBuZw==/794x1000/HcXVzg.png",
+    "https://img.itch.zone/aW1hZ2UvMTE5OTAyNy83MDA2MzkwLnBuZw==/794x1000/8%2FAygb.png"
+],"links":[
+    {
+        "name":"Play",
+        "url":"https://jannik323.github.io/jballs_td/"
+    },
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/jballs_td"
+    },
+    {
+        "name":"itch.io",
+        "url":"https://jannik323.itch.io/ball-buster-td"
+    }
+]}

@@ -1,0 +1,18 @@
+{"name":"Connect Any",
+"description":"Connect 4, but you can change the win condition and play with as many players as you want.<br><br>Not much more to say.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/connectany.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/Jconnectany"
+    },{
+        "name":"Play",
+        "url":"https://jannik323.github.io/Jconnectany/"
+    }
+]}

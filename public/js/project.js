@@ -20,25 +20,26 @@ fetch("/data/"+projectName+".json").then(response=>{
         case "never finished💀":
             projectStateElement.style.color="red";
             break;
-        case "paused":
+        case "on pause":
         case "discontinued":
         case "lost interest":
             projectStateElement.style.color="#bcac7a";
             break;
         case "in progress":
+            case "unfinished":
             projectStateElement.style.color="#8495ef";
             break;
     }
 
     let projectDescriptionElement =  document.getElementById("projectDescription");
-    projectDescriptionElement.innerText=data.description;
+    projectDescriptionElement.innerHTML=data.description;
 
     let techElementTemplate = document.getElementById("techTemplate").content.querySelector("div");
     let projectTechElement = document.getElementById("projectTech");
 
     for (let i = 0; i < data.tech.length; i++) {
         let element = techElementTemplate.cloneNode(true);
-        element.querySelector("img").src="/imgs/"+data.tech[i]+".svg";
+        element.querySelector("img").src="/imgs/icons/"+data.tech[i]+".svg";
         element.querySelector("img").alt=data.tech[i];
         element.title = data.tech[i];
         projectTechElement.appendChild(element);
@@ -84,8 +85,10 @@ fetch("/data/"+projectName+".json").then(response=>{
     let imgCount = 0;
     addImageElement();
     function addImageElement(){
+        if(newimgposy>800){
+            moveableRoot.style.height=(newimgposy+100)+"px";
+        }
         if(imgCount>data.imgs.length-1)return;
-
         let element = imgElementTemplate.cloneNode(true);
         element.style.opacity="0.8";
         element.querySelector("img").src=data.imgs[imgCount];
@@ -93,11 +96,9 @@ fetch("/data/"+projectName+".json").then(response=>{
         initMoveable(element);
         element.moveable.x = newimgposx;
         element.moveable.y = newimgposy;
+        
         element.querySelector("img").onload=()=>{
             newimgposy+=element.clientHeight+20;
-            if(newimgposy>800){
-                moveableRoot.style.height=(newimgposy+200)+"px";
-            }
             imgCount++;
             addImageElement();
         }

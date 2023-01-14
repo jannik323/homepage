@@ -1,16 +1,16 @@
-let webpageVisitsEle = document.getElementById("webpageVisits");
-if(webpageVisitsEle!=null){
-    fetch("/data/stats").then(response=>{
-        if (!response.ok) {
-            error(response.status);
-            throw new Error("Request failed with status "+response.status);
-        }
-        return response.json();
-    }).then(data=>{
-        webpageVisitsEle.innerText=data.pageVisits;
-    })
-    .catch(errordata=>console.error(errordata));
-}
+// let webpageVisitsEle = document.getElementById("webpageVisits");
+// if(webpageVisitsEle!=null){
+//     fetch("/data/stats").then(response=>{
+//         if (!response.ok) {
+//             error(response.status);
+//             throw new Error("Request failed with status "+response.status);
+//         }
+//         return response.json();
+//     }).then(data=>{
+//         webpageVisitsEle.innerText=data.pageVisits;
+//     })
+//     .catch(errordata=>console.error(errordata));
+// }
 
 // let discordLogin = document.getElementById("discordlogin");
 // if(getCookie("discordToken")!=null){
@@ -32,6 +32,7 @@ fetch("/data/projects?showcased=true").then(response=>{
     }
     return response.json();
 }).then(data=>{
+    shuffleArray(data);
 
     let gamesLinksElement = document.getElementById("gamesLinks");
     let toolsLinksElement = document.getElementById("toolsLinks");
@@ -43,7 +44,25 @@ fetch("/data/projects?showcased=true").then(response=>{
     let toolsNewlinkpos = 80;
     let otherNewlinkpos = 80;
 
+    let gCounter = 3;
+    let tCounter = 3;
+    let oCounter = 3;
+
     for (let i = 0; i < data.length; i++) {
+        switch(data[i].category){
+            case "games":
+                if(gCounter<=0)continue;
+                gCounter--;
+                break;
+                case "tools":
+                    if(tCounter<=0)continue;
+                tCounter--;
+                break;
+                case "other":
+                if(oCounter<=0)continue;
+                oCounter--;
+                break;
+        }
         let element = linkElementTemplate.cloneNode(true);
         if(data[i].showcased){
             element.classList.add("star");
@@ -101,4 +120,13 @@ function getCookie(cname) {
         }
     }
     return "";
-  }
+}
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}

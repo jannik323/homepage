@@ -31,7 +31,6 @@ main{
 }
 
 div#moveableRoot{
-    margin: 16px;
     width: 800px;
     height: 1000px;
     position: relative;

@@ -1,0 +1,19 @@
+{"name":"Tic-Tac-Toe Online",
+"description":"This was originally planned to be a nodejs server with multiple games which could be played online with others in different rooms.<br><br>I ended up just creating tic-tac-toe as a game.Which worked ,but definitely wasnt anything near perfect.<br> This was also mostly just bcs i wanted to play around with nodejs and the socket.io package.",
+"date":null,
+"state":"kinda finished",
+"tech":[
+    "javascript",
+    "nodejs",
+    "express-js",
+    "html",
+    "css"
+],
+"imgs":[
+    "/imgs/projects/jplayonline.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/jplay-online"
+    }
+]}
