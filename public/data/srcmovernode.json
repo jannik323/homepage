@@ -1,0 +1,14 @@
+{"name":"SRC Mover NodeJS",
+"description":"A nodejs app which let's you move/copy over all runs of a speedrun category on speedrun.com to another category.<br><br>You need to enter the ID's of the categories and your api key that has edit permissions for both categories.<br><br>This is just the nodejs version of <a href='/projects/srcmover'>src_mover</a>, because i wasn't able to get the browser version to work for some reason.",
+"date":null,
+"state":"finished",
+"tech":[
+    "nodejs"
+],
+"imgs":[
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/src_mover_node"
+    }
+]}

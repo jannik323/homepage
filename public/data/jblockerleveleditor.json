@@ -1,0 +1,18 @@
+{"name":"Jblocker Level Editor",
+"description":"This is a simple level editor for <a href='/projects/jblocker'>jblocker</a> which can be used instead of using any other image manipulation software.<br><br>The main difference over this and using ms-paint is that all the correct colors are already pre-defined.I also just wanted to create my own \"level editor\", even if its just a weird pixelart creator.<br><br>The only problem i had was saving the images , because the html canvas , which i used for painting , would not save all the colors 100% accurate (slightly different). Which isnt a problem normally, but jblocker needs the <b>exact</b> right color for it to work.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/jblockerlvledit.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/jblocker-level-editor"
+    },{
+        "name":"Website",
+        "url":"https://jannik323.github.io/jblocker-level-editor/"
+    }
+]}

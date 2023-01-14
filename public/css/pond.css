@@ -69,6 +69,8 @@ body{
 [moveable]{
     cursor: grab;
     opacity: 0.0;
+    transition: filter .25s;
+    transition-timing-function: cubic-bezier();
 }
 
 [moveable][held]{

@@ -1,0 +1,16 @@
+{"name":"JChat",
+"description":"JChat is a nodejs webserver which hosts a small little chat with room creation and passwords.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","nodejs","express-js","html","css"
+],
+"imgs":[
+    "/imgs/projects/jchat.png",
+    "/imgs/projects/jchat2.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"github.com/jannik323/jchat"
+    }
+]}

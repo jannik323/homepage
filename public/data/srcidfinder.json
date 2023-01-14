@@ -1,0 +1,19 @@
+{"name":"Speedrun.com Id Finder",
+"description":"A website to find category and level id's on speedrun.com.<br>Initial game search may take some time, so don't get confused why nothing may happen at first.<br><br>I made this because i often didn't want to manually do requests to the API of speedrun.com just to find out some id. This way you just have to type in the game and select category and or level.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/srcfinder1.png",
+    "/imgs/projects/srcfinder2.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/src_category_id_finder"
+    },{
+        "name":"Website",
+        "url":"https://jannik323.github.io/src_category_id_finder/"
+    }
+]}

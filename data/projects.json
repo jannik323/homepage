@@ -36,7 +36,7 @@
         "showcased":true,
         "shortdescription":"A game made for the gmtk2022 jam!"
     },{
-        "name":"Speedrun.com id finder",
+        "name":"Speedrun.com Id Finder",
         "urlName":"srcidfinder",
         "category":"tools",
         "showcased":true,
@@ -102,16 +102,10 @@
         "showcased":false,
         "shortdescription":"A online chat website!"
     },{
-        "name":"SRC Mover",
-        "urlName":"srcmover",
-        "category":"tools",
-        "showcased":true,
-        "shortdescription":"A website that i created to move speedruns from one category to another for speedrun.com!"
-    },{
         "name":"SRC Mover NodeJS",
         "urlName":"srcmovernode",
         "category":"tools",
-        "showcased":false,
+        "showcased":true,
         "shortdescription":"A nodejs program that i created to move speedruns from one category to another for speedrun.com!"
     },{
         "name":"Ball Buster TD",

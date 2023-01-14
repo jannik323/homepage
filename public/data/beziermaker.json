@@ -1,0 +1,19 @@
+{"name":"Bezier Maker",
+"description":"A short javascript experiment i did, because i watched a video about bézier-curves.<br><br> You can change the degree in the source code, as i was too lazy to add any UI or settings on the website itself.<br>Should be in the setup() function. First four are position related and last one is degree.<br><br>You can move around nodes by just drag clicking them.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/bezier.png",
+    "/imgs/projects/bezier2.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/beziermaker"
+    },{
+        "name":"Website",
+        "url":"https://jannik323.github.io/beziermaker/"
+    }
+]}

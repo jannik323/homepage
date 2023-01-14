@@ -1,0 +1,19 @@
+{"name":"Karlson Score",
+"description":"This website gets a speedrunners's best times of all categories and calculates a score out of them compared to the best possible time. It also has a comparison section to compare runners best IL times and fullgame times.<br><br>I mainly made this ,because davetheepic04 made something simmilar, but in a google doc, which isnt as flexible and customisable as this is.<br><br>An important thing to mention is, that the score table is empty at the beginning, so that the user can decide themself who to have on the score list.There is also a \"Add Top Players\" button for the lazy people, that just wanna see the best times.(These are just the best fullgame players, not best score)<br><br>The scores get cached in the users localstorage and will be updated automatically after a set time.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/karlsonscore1.png",
+    "/imgs/projects/karlsonscore2.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/KarlsonScore/"
+    },{
+        "name":"Website",
+        "url":"https://jannik323.github.io/KarlsonScore/"
+    }
+]}

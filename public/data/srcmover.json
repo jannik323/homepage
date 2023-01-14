@@ -1,0 +1,18 @@
+{"name":"SRC Mover",
+"description":"A website which let's you move/copy over all runs of a speedrun category on speedrun.com to another category.<br><br>You need to enter the ID's of the categories and your api key that has edit permissions for both categories.<br><br>I don't remember if this worked or not ... if not then <a href='/projects/srcmovernode'>src_mover_node</a> did.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/srcmover.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/src_mover"
+    },{
+        "name":"Website",
+        "url":"https://jannik323.github.io/src_mover/"
+    }
+]}

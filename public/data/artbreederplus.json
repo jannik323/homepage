@@ -1,0 +1,18 @@
+{"name":"Artbreeder+",
+"description":"Browser addon that expands and enhances the website <a href='https://artbreeder.com'>https://artbreeder.com</a>.<br><br>This addon was made for the old version of the website, it wont work for the new one.<br><br>I originally just made this as an addon for myself, that could display the amount of likes/hearts an image has received, as that was included the the json file image requests , but was unused and not displayed.<br><br>I later added a bunch of other features to the addon and published it to addons.mozilla.org.<br><br>Small warning, if anyone wants to look into the code...<br> It's a total mess.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","css"
+],
+"imgs":[
+    "https://addons.mozilla.org/user-media/previews/thumbs/266/266001.jpg?modified=1645460456","https://addons.mozilla.org/user-media/previews/thumbs/265/265480.jpg?modified=1645460456"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/artbreederplus"
+    },{
+        "name":"Mozilla Addon",
+        "url":"https://addons.mozilla.org/en-US/firefox/addon/ab-plus/"
+    }
+]}

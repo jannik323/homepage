@@ -1,0 +1,16 @@
+{"name":"Pixel Online",
+"description":"Pixel Online is a Nodejs webserver with a pixelcanvas, on which other clients can collectively draw.<br><br>This was pretty fun to play around with at the time i had it hosted on heroku. Only drawback was that the hosting i used was very limited , as i used a free tier.<br><br>I might remake this project at one time.(2023)",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","nodejs","express-js","html","css"
+],
+"imgs":[
+    "/imgs/projects/pixelonline.png",
+    "https://i.imgur.com/iyW754t.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/pixelonline/"
+    }
+]}
