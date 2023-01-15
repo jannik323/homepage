@@ -1,0 +1,16 @@
+{"name":"Color War",
+"description":"Color War is a program i made to watch colors fight.<br><br>You can see which color is currently winning by the color of the border.",
+"date":null,
+"state":"finished",
+"tech":[
+    "java"
+],
+"imgs":[
+    "/imgs/projects/colorwar1.gif",
+    "/imgs/projects/colorwar2.gif"
+],"links":[
+    {
+        "name":"Download",
+        "url":"/download/colorwar.jar"
+    }
+]}

@@ -1,0 +1,16 @@
+{"name":"Unnamed Java Game",
+"description":"My first game i made in java with swing. I never named it and its folder is just called \"game\". Too bad... it will be \"Unnamed Java Game\" forever.",
+"date":null,
+"state":"finished",
+"tech":[
+    "java"
+],
+"imgs":[
+    "https://cdn.discordapp.com/attachments/872625271310794763/911340334921961482/GIF_19.11.2021_20-38-26.gif"
+
+],"links":[
+    {
+        "name":"Download",
+        "url":"/download/game_jar.jar"
+    }
+]}

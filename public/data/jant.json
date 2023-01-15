@@ -1,0 +1,18 @@
+{"name":"JAnt",
+"description":"This is a clone of <a href='/projects/jlife'>jlife</a> that is simulating \"Langton's Ant\".<br><br>The two look pretty identical and that is because i hardly changed much. I just removed a lot, because this one doesn't need special types. It just needs ants...<br><br>I'd advice to just click \"Clear\" and then place a single ant. I'm not sure why i left in that randomness.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/jant.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/jant"
+    },{
+        "name":"Website",
+        "url":"https://jannik323.github.io/jant/"
+    }
+]}

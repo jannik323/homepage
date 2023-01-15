@@ -1,0 +1,16 @@
+{"name":"Sorting Visualiser",
+"description":"A Sorting visualiser i made in java, which, like the name implies, visualises different sorting alogorithm.<br><br>It's hardcoded to be a insertion-sort, but the program includes insertion,bubble,quick and selection-sort.<br><br>So if you want to view another sorting alogorithm, you will have to change the source code. I assume i had it this way, because i made it formyself, not thinking how others might use the program.<br><br>Edit (2023): Just added buttons for switching algorithms, unfortunatly quick-sort doesn't seem to work right and im too lazy to fix it.",
+"date":null,
+"state":"finished",
+"tech":[
+    "java"
+],
+"imgs":[
+    "/imgs/projects/sorter.png",
+    "https://cdn.discordapp.com/attachments/872625271310794763/922543269186011167/GIF_20.12.2021_18-35-31.gif"
+],"links":[
+    {
+        "name":"Download",
+        "url":"/download/sorter.jar"
+    }
+]}

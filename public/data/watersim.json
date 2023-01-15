@@ -1,0 +1,17 @@
+{"name":"TopDown Water Sim",
+"description":"This is a java program i made, that simulates water from a top-down perspective. You need to be a bit imaginative, for it to work and the controls cam be a bit tricky, but its still pretty cool.<br><br>Controls:<br>w,a,s,d to move around<br>q and e to move up and down<br>x and y to raise or lower the ground<br>Spacebar to place water at your cursors height<br><br>I don't remember why i made this, but it must have been inspired by my <a href='/projects/jpowdertool'>jpowdertool</a>. As the water in both projects behaves in a simmilar manner.<br> After looking around, i found out that this project was created before jpowdertool. Interesting...",
+"date":null,
+"state":"finished",
+"tech":[
+    "java"
+],
+"imgs":[
+    "https://cdn.discordapp.com/attachments/872625271310794763/912088230063652894/GIF_21.11.2021_22-12-24.gif",
+    "https://cdn.discordapp.com/attachments/872625271310794763/912074306819878932/GIF_21.11.2021_21-16-54.gif",
+    "https://cdn.discordapp.com/attachments/872625271310794763/912054171044290571/GIF_21.11.2021_19-56-06.gif"
+],"links":[
+    {
+        "name":"Download",
+        "url":"/waterSim.jar"
+    }
+]}

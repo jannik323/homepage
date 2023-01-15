@@ -1,0 +1,18 @@
+{"name":"JLife",
+"description":"A simulation of \"conway's game of life\" in the webbrowser, with a bunch of featues.<br><br>I really like the custom type feature, which lets you define groups of states, which get saved to your input type selection.<br><br> I think i did a pretty good job, considering how limited my knowledge was at the time.(still is :P)<br><br>The styling on the other hand is pretty bad. (weird scrollbar sections 💀)",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css"
+],
+"imgs":[
+    "/imgs/projects/jlife.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/jlife"
+    },{
+        "name":"Website",
+        "url":"https://jannik323.github.io/jlife/"
+    }
+]}

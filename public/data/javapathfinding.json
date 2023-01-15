@@ -1,5 +1,5 @@
 {"name":"Java pathfinding",
-"description":"A program i made to play around with pathfinding.<br><br>I only got this one gif, because i cant find the files for it rn.",
+"description":"A program i made to play around with pathfinding.<br><br>You can place and remove walls ,water and boostpads.The pathfinding agent would find the fastet way to its goal, while avoiding walls and walking boost pads.<br><br>I only got this one gif, because i cant find the files for it right now.",
 "date":null,
 "state":"finished",
 "tech":[

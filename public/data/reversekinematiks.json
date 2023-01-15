@@ -1,0 +1,16 @@
+{"name":"Reverse Kinematiks",
+"description":"After creating a program that simulates <a href='/projects/forwardkinematiks'>forward kinematiks</a>, i thought it would only be fair to also create a simulation about reverse kinematiks. The cooler version of the two.<br><br>In the demo it has a fixed point, but you can remove that....if you edit the source code.<br><br>Control it by holding down your mouse and moving around.",
+"date":null,
+"state":"finished",
+"tech":[
+    "java"
+],
+"imgs":[
+    "/imgs/projects/rkine.gif",
+    "https://cdn.discordapp.com/attachments/872625271310794763/919395525227327598/GIF_12.12.2021_02-07-50.gif"
+],"links":[
+    {
+        "name":"Download",
+        "url":"/download/reversekinematiks.jar"
+    }
+]}

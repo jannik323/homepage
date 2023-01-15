@@ -1,0 +1,17 @@
+{"name":"JPowdertool",
+"description":"A game inspired by programs like \"Powdertoy\", which simulate a 2D Sandbox with a bunch of elements to select from.<br><br>My JPowdertool has liquid,solid,powder and gas-like elements to play around with.<br><br>Just don't combine pee with water.",
+"date":null,
+"state":"finished",
+"tech":[
+    "java"
+],
+"imgs":[
+    "/imgs/projects/jpowder1.png",
+    "/imgs/projects/jpowder2.gif",
+    "https://cdn.discordapp.com/attachments/872625271310794763/919313197524193291/GIF_11.12.2021_20-41-07.gif"
+],"links":[
+    {
+        "name":"Download",
+        "url":"/download/jpowdertool.jar"
+    }
+]}

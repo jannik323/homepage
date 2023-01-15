@@ -1,0 +1,15 @@
+{"name":"Forward Kinematiks",
+"description":"The counterpart to <a href='/projects/reversekinematiks'>reverse kinematiks</a> and probably the less cool one.<br><br>You can control the \"thing\" by scolling your mousewheel.",
+"date":null,
+"state":"finished",
+"tech":[
+    "java"
+],
+"imgs":[
+    "/imgs/projects/fkine.gif"
+],"links":[
+    {
+        "name":"Download",
+        "url":"/download/forwardkinematiks.jar"
+    }
+]}

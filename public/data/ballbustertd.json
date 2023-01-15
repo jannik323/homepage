@@ -10,7 +10,8 @@
 "imgs":[
     "https://img.itch.zone/aW1hZ2UvMTE5OTAyNy83MDA2MzgzLmdpZg==/794x1000/t%2FD497.gif",
     "https://img.itch.zone/aW1hZ2UvMTE5OTAyNy83MDA2Mzg2LnBuZw==/794x1000/HcXVzg.png",
-    "https://img.itch.zone/aW1hZ2UvMTE5OTAyNy83MDA2MzkwLnBuZw==/794x1000/8%2FAygb.png"
+    "https://img.itch.zone/aW1hZ2UvMTE5OTAyNy83MDA2MzkwLnBuZw==/794x1000/8%2FAygb.png",
+    "https://cdn.discordapp.com/attachments/872625271310794763/887764898183020554/GIF_15.09.2021_20-20-03.gif"
 ],"links":[
     {
         "name":"Play",
@@ -21,7 +22,7 @@
         "url":"https://github.com/jannik323/jballs_td"
     },
     {
-        "name":"itch.io",
+        "name":"Itch.io",
         "url":"https://jannik323.itch.io/ball-buster-td"
     }
 ]}

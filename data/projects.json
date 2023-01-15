@@ -176,7 +176,7 @@
     },{
         "name":"JPowdertool",
         "urlName":"jpowdertool",
-        "category":"game",
+        "category":"other",
         "showcased":true,
         "shortdescription":"Powdertool clone , with funny elements to play around with!"
     },{
@@ -218,7 +218,7 @@
     },{
         "name":"Unnamed Java Game",
         "urlName":"unnamed1",
-        "category":"game",
+        "category":"games",
         "showcased":false,
         "shortdescription":"A game in which you shoot at and avoid falling Balls!"
     },{
@@ -236,7 +236,7 @@
     },{
         "name":"Java Snake",
         "urlName":"javasnake",
-        "category":"game",
+        "category":"games",
         "showcased":false,
         "shortdescription":"A snake clone made in java!"
     },{
