@@ -5,14 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SnakeOnline</title>
-    <script src="/js/socketio/socket-client.js"></script>
-    <script type="module" src="/js/snakeonline/main.js" defer></script>
-    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/snakeonline.css">
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="snakeonline.css">
 </head>
 <body>
     <div class="center">
         <canvas id="canvas"></canvas>
+        <div id="startmenu">
+            <input type="text"  id="username" placeholder="username">
+            <button id="start">start</button>
+        </div>
+
+        <div id="deathmenu">
+            <h2 style="text-align: center;">You Died !</h2>
+            <span id="deathCause"></span>
+            <button id="restart">restart</button>
+        </div>
     </div>
 </body>
 </html>
