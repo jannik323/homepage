@@ -123,7 +123,7 @@ function startServer(){
     .init({
         packageRoot: __dirname,
         configDir: "./greenlock.d",
-        maintainerEmail: "jannik323@outlook.de",
+        maintainerEmail: "jannik323@outlook.com",
         cluster: false
     }).serve(app);
 

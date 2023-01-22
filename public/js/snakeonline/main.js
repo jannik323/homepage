@@ -278,7 +278,7 @@ startButton.onclick=()=>{
     };
     startButton.onclick=null;
     startMenu.style.display="none";
-    ws = new WebSocket("wss://"+IP+":"+PORT);
+    ws = new WebSocket("wss://jannik323.software:"+PORT);
 
     setInterval(loop,16);
 
