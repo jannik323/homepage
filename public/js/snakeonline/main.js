@@ -557,12 +557,11 @@ function startClick(){
     addEventListener('keyup', e=>{
         delete keysdown[e.key];
     });
-    if('createTouch' in document){
-        canvas.addEventListener("touchstart",(e)=>{
+    if(navigator.userAgent.toLowerCase().match(/mobile/i)) { 
+            canvas.addEventListener("touchstart",(e)=>{
             var br = canvas.getBoundingClientRect();
             var x = e.touches[0].clientX - br.left;
             var y = e.touches[0].clientY - br.top;
-            
             if(x>y){
                 if((x-canvas.clientWidth)*-1>y){
                     sendMessage("input","up");
