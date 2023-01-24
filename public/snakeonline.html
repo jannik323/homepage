@@ -15,51 +15,68 @@
             <h2 style="position: absolute; color:black;bottom:120px;left:0; width: 100%; text-align: center;" >SNAKE ONLINE</h2>
             <span style="position: relative;">
                 <span remaining="12">
-                    <input oninput="remainingCheck(this,12);" type="text" autocomplete="off"  id="username" placeholder="username">
+                    <input oninput="remainingCheck(this,12);" type="text" autocomplete="off"  id="username" placeholder="Username">
                 </span>
             </span>
-            <button onclick="startClick()">start</button>
-            <a href="javascript:alert('w,a,s,d to move around');">how to play?</a>
+            <button onclick="startClick()">Start</button>
+            <a href="javascript:alert('w,a,s,d to move around');">How to play?</a>
         </div>
 
         <div id="deathmenu" class="menu">
             <h2 style="text-align: center;">You Died !</h2>
             <span id="deathCause"></span>
-            <button onclick="restartClick()">restart</button>
+            <button onclick="restartClick()">Restart</button>
         </div>
 
         <div id="connectionerror" class="menu">
             <h2 style="text-align: center;">Unable to connect to the host.</h2>
             <p style="text-align: center;">Try again later!</p>
-            <button onclick="reloadClick()">reload</button>
+            <button onclick="reloadClick()">Reload</button>
         </div>
     </div>
 
-    <div id="leaderboard" open="false" onclick="toggleLeaderboardShow()"> 
-       <button style="width: 100%;">
-            <span>Leaderboard</span>
-            <span> ></span>
-       </button>
-       <div id="lbList">
-
-       </div>
-    </div>
-
-    <div id="chat" open="false" onclick="toggleChatShow()"> 
-        <button style="width: 100%;">
-             <span>Chat</span>
-             <span> ></span>
-        </button>
-        <div id="chatList">
- 
+    <div id="playUI" style="display: none;">
+        <div class="fixed top right">
+            <div class="whitebox"> 
+                <div class="border">
+                    <span>Highscore: </span><span id="highscoreScore">-999</span>
+                </div>
+                <div class="border">
+                    <span>Player: </span><span id="highscoreUsername">Jannik323</span>
+                </div>
+             </div>
+             <br>
+            <div id="leaderboard" open="false" class="whitebox"> 
+                <button style="width: 100%;" onclick="toggleLeaderboardShow()">
+                     <span>Leaderboard</span>
+                     <span> ></span>
+                </button>
+                <div id="lbList">
+         
+                </div>
+             </div>
         </div>
-
-        <span style="position: relative; display: none;">
-            <span remaining="32" >
-                <input oninput="remainingCheck(this,32);" type="text" autocomplete="off"  id="chatinput" placeholder="message">
+    
+        
+    
+        <div id="chat" open="false" class="fixed top left whitebox" > 
+            <button style="width: 100%;" onclick="toggleChatShow()">
+                 <span>Chat</span>
+                 <span> ></span>
+            </button>
+            <div id="chatList">
+     
+            </div>
+    
+            <span style="position: relative; display: none;">
+                <span remaining="32" >
+                    <input oninput="remainingCheck(this,32);" type="text" autocomplete="off"  id="chatinput" placeholder="message">
+                </span>
             </span>
-        </span>
+    
+         </div>
+    </div>
 
-     </div>
+   
 </body>
 </html>

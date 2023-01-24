@@ -87,28 +87,51 @@ button{
     display: none;
 }
 
-#chat{
-    left:1rem;
-    width: 15rem !important;
+.fixed{
+    position: fixed;
 }
 
-#leaderboard,#chat{
-    display: none;
-    position: fixed;
-    right: 1rem;
+.bottom{
+    bottom: 1rem;
+}
+
+.top{
     top: 1rem;
+}
+
+.left{
+    left:1rem;
+}
+
+.right{
+    right: 1rem;
+}
+
+#chat{
+    width: 20rem !important;
+}
+
+#leaderboard{
+    width: 10rem;
+}
+
+.whitebox{
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+    display: flex;
     background-color: white;
     color:black;
     border:1px black solid;
     padding: 1rem;
-    cursor: pointer;
-    width: 10rem;
-    flex-direction: column;
-    align-items: center;
-    gap:1rem
 }
 
-#leaderboard >button> span,#chat >button> span{
+.border{
+    border:1px black solid;
+    padding: 0.1rem .5rem ;
+}
+
+.whitebox span{
     color:black;
     display: inline-block;
 }
@@ -137,11 +160,14 @@ button{
 }
 
 #lbList div,#chatList div{
-    display: flex;
-    flex-direction: row;
-    gap:1rem;
     width: 100%;
     margin:0px 0.1rem;
+}
+#lbList div{
+    width: 100%;
+    margin:0px 0.1rem;
+    display: flex;
+    align-items: center;
 }
 
 #lbList div span:first-child{

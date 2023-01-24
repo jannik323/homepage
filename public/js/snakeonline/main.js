@@ -7,6 +7,8 @@ let ctx = canvas.getContext("2d");
 
 const PORT = 44444;
 
+let playUIEle = document.getElementById("playUI");
+
 let usernameEle = document.getElementById("username");
 let startMenuEle = document.getElementById("startmenu");
 let deathMenuEle = document.getElementById("deathmenu");
@@ -19,6 +21,10 @@ let chatEle = document.getElementById("chat");
 let chatListEle = document.getElementById("chatList");
 let chatInputEle = document.getElementById("chatinput");
 let chatSpanEle = chatEle.querySelectorAll("button span")[1];
+
+let highscoreScoreEle = document.getElementById("highscoreScore");
+let highscoreUsernameEle = document.getElementById("highscoreUsername");
+
 
 
 let snakes = [];
@@ -104,10 +110,13 @@ function createChat(){
     chat.forEach(e=>{
         let div = document.createElement("div");
         let usernamespan = document.createElement("span");
-        usernamespan.innerText=e.usr+ ": ";
+        usernamespan.innerText=e.usr;
+        let colonspan = document.createElement("span");
+        colonspan.innerText=":";
         let msgspan = document.createElement("span");
         msgspan.innerText=e.msg;
         div.appendChild(usernamespan);
+        div.appendChild(colonspan);
         div.appendChild(msgspan);
         chatListEle.appendChild(div);
     })
@@ -195,6 +204,11 @@ msgHandler = new MessageHandler();
 function sendMessage(type,object){
     ws.send(JSON.stringify({t:type,data:object}));
 }
+
+msgHandler.addMsgHandle("highscore",data=>{
+    highscoreScoreEle.innerText=data.score;
+    highscoreUsernameEle.innerText=data.usr;
+})
 
 msgHandler.addMsgHandle("lb",data=>{
     leaderboard=data;
@@ -476,11 +490,6 @@ usernameEle.addEventListener("keydown",e=>{
     }
 })
 
-chatInputEle.addEventListener("click",e=>{
-    e.stopPropagation();
-})
-
-
 chatInputEle.addEventListener("keydown",e=>{
     e.stopPropagation();
 
@@ -505,14 +514,12 @@ function startClick(){
 
     ws.onerror=()=>{
         connectionerrorEle.style.display = "block";
-        leaderboardEle.style.display="none";
-        chatEle.style.display="none";
+        playUIEle.style.display="none";
     }
 
     ws.onopen=()=>{
         setInterval(loop,16);
-        leaderboardEle.style.display="flex";
-        chatEle.style.display="flex";
+        playUIEle.style.display="block";
     }
 
     ws.addEventListener("open", () =>{
