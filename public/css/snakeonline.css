@@ -108,7 +108,11 @@ button{
 }
 
 #chat{
-    width: 20rem !important;
+    width: 20rem;
+    max-width: 50rem;
+    min-width: 15rem;
+    resize: horizontal;
+    overflow-x: hidden;
 }
 
 #leaderboard{
