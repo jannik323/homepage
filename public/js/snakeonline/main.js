@@ -558,55 +558,35 @@ function startClick(){
         delete keysdown[e.key];
     });
     if('createTouch' in document){
-        document.addEventListener('touchstart', handleTouchStart);        
-        document.addEventListener('touchmove', handleTouchMove);
-    
-        var xDown = null;                                                        
-        var yDown = null;
-
-        function getTouches(evt) {
-            return evt.touches || evt.originalEvent.touches;
-        }  
-                                                                                
-        function handleTouchStart(evt) {
-            const firstTouch = getTouches(evt)[0];                                      
-            xDown = firstTouch.clientX;                                      
-            yDown = firstTouch.clientY;                                      
-        };                                                
-                                                                                
-        function handleTouchMove(evt) {
-            if ( ! xDown || ! yDown ) {
-                return;
-            }
-    
-            var xUp = evt.touches[0].clientX;                                    
-            var yUp = evt.touches[0].clientY;
-    
-            var xDiff = xDown - xUp;
-            var yDiff = yDown - yUp;
-                                                                                
-            if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-                if ( xDiff > 0 ) {
-                    sendMessage("input","right");
-                } else {
-                    sendMessage("input","left");
-                }                       
-            } else {
-                if ( yDiff > 0 ) {
-                    sendMessage("input","down");
-                } else { 
+        canvas.addEventListener("touchstart",(e)=>{
+            var br = canvas.getBoundingClientRect();
+            var x = e.touches[0].clientX - br.left;
+            var y = e.touches[0].clientY - br.top;
+            
+            if(x>y){
+                if((x-canvas.clientWidth)*-1>y){
                     sendMessage("input","up");
-                }                                                                 
+                    //top
+                }else{
+                    sendMessage("input","right");
+                    //right
+                }
+            }else{
+                if(x>(y-canvas.clientHeight)*-1){
+                    sendMessage("input","down");
+                    //bottom
+                }else{
+                    sendMessage("input","left");
+                    //left
+                }
             }
-            xDown = null;
-            yDown = null;                                             
-        };
+        });
     }
 }
 
 function restartClick(){
     sendMessage("restart",null);
-    deathmenu.style.display="none";
+    deathMenuEle.style.display="none";
 }
 
 function reloadClick(){
