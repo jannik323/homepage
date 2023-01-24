@@ -557,6 +557,47 @@ function startClick(){
     addEventListener('keyup', e=>{
         delete keysdown[e.key];
     });
+    if('createTouch' in document){
+        canvas.addEventListener('touchstart', handleTouchStart, false);        
+        canvas.addEventListener('touchmove', handleTouchMove, false);
+    
+        var xDown = null;                                                        
+        var yDown = null;
+                                                                                
+        function handleTouchStart(evt) {
+            const firstTouch = evt.touches[0];                                      
+            xDown = firstTouch.clientX;                                      
+            yDown = firstTouch.clientY;                                      
+        };                                                
+                                                                                
+        function handleTouchMove(evt) {
+            if ( ! xDown || ! yDown ) {
+                return;
+            }
+    
+            var xUp = evt.touches[0].clientX;                                    
+            var yUp = evt.touches[0].clientY;
+    
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+                                                                                
+            if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+                if ( xDiff > 0 ) {
+                    sendMessage("input","right");
+                } else {
+                    sendMessage("input","left");
+                }                       
+            } else {
+                if ( yDiff > 0 ) {
+                    sendMessage("input","down");
+                } else { 
+                    sendMessage("input","up");
+                }                                                                 
+            }
+            xDown = null;
+            yDown = null;                                             
+        };
+    }
 }
 
 function restartClick(){
