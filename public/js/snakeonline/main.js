@@ -558,14 +558,18 @@ function startClick(){
         delete keysdown[e.key];
     });
     if('createTouch' in document){
-        canvas.addEventListener('touchstart', handleTouchStart, false);        
-        canvas.addEventListener('touchmove', handleTouchMove, false);
+        document.addEventListener('touchstart', handleTouchStart);        
+        document.addEventListener('touchmove', handleTouchMove);
     
         var xDown = null;                                                        
         var yDown = null;
+
+        function getTouches(evt) {
+            return evt.touches || evt.originalEvent.touches;
+        }  
                                                                                 
         function handleTouchStart(evt) {
-            const firstTouch = evt.touches[0];                                      
+            const firstTouch = getTouches(evt)[0];                                      
             xDown = firstTouch.clientX;                                      
             yDown = firstTouch.clientY;                                      
         };                                                
