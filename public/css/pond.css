@@ -20,6 +20,21 @@ body,html{
     font-size: 17px;
 }
 
+[notice]::after{
+    font-size: 16px;
+    content: attr(notice);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transform: rotate(6deg);
+    color: lightgreen;
+    text-shadow: white 0px 0px 10px;
+}
+
+[notice]:hover::after{
+    font-size: 17px;
+}
+
 main{
     width: 100%;
     height: 100%;

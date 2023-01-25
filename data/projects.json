@@ -1,5 +1,11 @@
 [
     {
+        "name":"Snake Online",
+        "urlName":"snakeonline",
+        "category":"games",
+        "showcased":true,
+        "shortdescription":"snake the game but multiplayer!"
+    },{
         "name":"Rocket Fun",
         "urlName":"rocketfun",
         "category":"games",

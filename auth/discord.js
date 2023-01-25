@@ -40,9 +40,11 @@ router.get('/callback',(req, res) => {
       }
       return response.json();
   }).then(data=>{
-    res.cookie("discordToken",data.access_token,{ maxAge: 604800, httpOnly: true,secure:true });
-    addValidAuth(data.access_token);
-    res.redirect("/");
+    res.cookie("discordToken",data.access_token,{ maxAge: data.expires_in, httpOnly: true,secure:true });
+    //data.refresh_token for refresh 
+    addValidAuth(data.access_token,data.expires_in,()=>{
+      res.redirect("/");
+    });
   });
   
 });
@@ -53,24 +55,30 @@ function findUserName(token){
   return auth.username;
 }
 
-function addValidAuth(token){
-  let newauth = {token:token,username:null};
-  if(validAuth.find(e=>e.token==token)==null){
-      validAuth.push(newauth);
-      fetch("https://discord.com/api/oauth2/@me",{
-          headers:{
-              "Authorization":"Bearer "+token,
-          }
-      }).then(response=>{
-          if (!response.ok) {
-          throw new Error("HTTP error " + response.status);
-          }
-          return response.json();
-      }).then(data=>{
-          console.log(data);
-          newauth.username=data.user.username;
-      });
-  }
+function addValidAuth(token,expires_in,callback){
+  let newauth = {token:token,username:null,id:null,expires_in:expires_in};
+  fetch("https://discord.com/api/oauth2/@me",{
+      headers:{
+          "Authorization":"Bearer "+token,
+      }
+  }).then(response=>{
+      if (!response.ok) {
+        throw new Error("HTTP error while getting auth info " + response.status);
+      }
+      return response.json();
+  }).then(data=>{
+      newauth.username=data.user.username;
+      newauth.id=data.user.id;
+
+      let existingAuth = validAuth.find(e=>e.id==newauth.id);
+      if(existingAuth==null){
+        validAuth.push(newauth);
+      }else{
+        existingAuth.username=newauth.username;
+        existingAuth.token=newauth.token;
+      }
+      callback();
+  });
   
 }
 

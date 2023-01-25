@@ -1,0 +1,20 @@
+{"name":"Snake Online",
+"description":"A online multiplayer game i made for playing snake together with other people.<br><br> Instead of using socket.io like the other attempts i had of making multiplayer web games, this cuts off the middleman and uses websockets as they are.<br><br> This game is also just a better multiplayer game than my previous ones, as cheating in it is pretty much impossible (Unless you somehow take over the server). The client just acts as a fancy display and as a controller , as you mostly just send input data and nothing else. The server simulates the game and sends game data back.<br><br> I tried to keep the data size that is being send as little as possible. At first i had it basically send all the raw data about the snakes, but i changed it to just sending its direction and length. The client then does the movement on its side and changes the snake according to the data. The snake movement is very predictable , that is why this is possible.<br><br> The collision detection is mostly just done with a grid, instead of iterating though every object. Not sure if that was the best idea, but its definitley better than the iteration though all.",
+"date":null,
+"state":"finished",
+"tech":[
+    "javascript","html","css","nodejs"
+],
+"imgs":[
+    "/imgs/projects/snakeonline.png",
+    "https://media.discordapp.net/attachments/718919966807687201/1067546335592587366/image.png?width=1126&height=679",
+    "https://cdn.discordapp.com/attachments/718919966807687201/1067475845221978194/image.png"
+],"links":[
+    {
+        "name":"Github",
+        "url":"https://github.com/jannik323/snake-online"
+    },{
+        "name":"Play",
+        "url":"/snakeonline"
+    }
+]}

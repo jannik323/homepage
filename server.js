@@ -55,6 +55,10 @@ function startServer(){
         res.sendFile(join(__dirname, 'public', 'about.html'));
     });
 
+    app.get('/snakeonline', (req, res) => {
+        res.sendFile(join(__dirname, 'public', 'snakeonline.html'));
+    });
+
     app.get('/projects/:project', (req, res) => {
         res.sendFile(join(__dirname, 'public', 'project.html'));
     });
@@ -113,11 +117,6 @@ function startServer(){
         // });
 //    },30*60000); // 30 minutes
 
-    fs.watchFile("./data/projects.json",{interval:60000},()=>{
-        projectsData=JSON.parse(fs.readFileSync("./data/projects.json","utf-8"));
-        initProjectsDataCategory();
-        console.log("projects object is now up to date: "+ new Date().toLocaleString());
-    })
 
     require("greenlock-express")
     .init({
