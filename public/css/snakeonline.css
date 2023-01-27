@@ -16,7 +16,6 @@ body{
 
 *{
     font-family: monospace;
-    color: white;
 }
 
 .center{
@@ -26,6 +25,12 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    gap:1rem
 }
 
 #canvas{
@@ -41,10 +46,12 @@ body{
     }
 }
 
-
+.nomargin{
+    margin: 0px;
+}
 
 input,button{
-    border:1px black solid;
+    border:2px black solid;
     background-color: white;
     color:black;
     padding: 0.25rem 0.5rem;
@@ -61,6 +68,33 @@ button{
     cursor: pointer;
 }
 
+.smallgap{
+    gap:0.25rem;
+}
+.smallgap>*{
+    margin: 0px;
+}
+
+.nogap{
+    gap:0rem !important;
+    padding: 0.25rem !important;
+}
+.nogap>*{
+    margin: 0px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    border: 2px black solid;
+    padding: 0.25rem 0.5rem;
+    background-color: white;
+    color:black;
+}
+
+.minbutton{
+    width: fit-content;
+    font-size: 0.8rem;
+}
+
 [remaining]:after{
     content: attr(remaining);
     position:absolute;
@@ -71,24 +105,24 @@ button{
 
 .menu{
     position: fixed;
-    background-color: grey;
-    border:1px black solid;
+    background-color: #a1b5a6;
+    border:2px black solid;
     padding: 1rem;
     gap: 1rem;
     flex-direction: column;
     display: flex;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-#deathmenu{
-    display: none;
-}
-
-#connectionerror{
+#deathmenu,#connectionerror,#gameresetmenu{
     display: none;
 }
 
 .fixed{
     position: fixed;
+}
+.nonfixed{
+    position: initial !important;
 }
 
 .bottom{
@@ -109,7 +143,7 @@ button{
 
 #chat{
     width: 20rem;
-    max-width: 50rem;
+    max-width: 30rem;
     min-width: 15rem;
     resize: horizontal;
     overflow-x: hidden;
@@ -119,24 +153,34 @@ button{
     width: 10rem;
 }
 
+.menu{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #a1b5a6;
+    border:2px black solid;
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+}
+
 .whitebox{
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap:1rem;
-    display: flex;
     background-color: white;
     color:black;
-    border:1px black solid;
+    gap:1rem;
+    border:2px black solid;
     padding: 1rem;
 }
 
-.border{
-    border:1px black solid;
-    padding: 0.1rem .5rem ;
+.whitebox span,.whitebox p{
+    color:black;
+    display: inline-block;
 }
 
-.whitebox span{
-    color:black;
+.toggler{
     display: inline-block;
 }
 
@@ -146,11 +190,12 @@ button{
     gap:.5rem;
     background-color: white;
     color:black;
-    border:1px black solid;
+    border:2px black solid;
     justify-content: center;
     align-items: center;
     padding: .5rem;
-    width: 80%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #chatList{
@@ -178,4 +223,72 @@ button{
     text-overflow: ellipsis;
     overflow: hidden;
     width: 80%;
+}
+
+#highscores span{
+    font-size: smaller;
+}
+
+.waveText{
+    animation-name: upDown;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color:green;
+    display: inline-block;    
+    width:100%;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+.waveText:nth-child(1){
+    animation-delay: .2s;
+}
+.waveText:nth-child(2){
+    animation-delay: .4s;
+}
+.waveText:nth-child(3){
+    animation-delay: .6s;
+}
+.waveText:nth-child(4){
+    animation-delay: .8s;
+}
+.waveText:nth-child(5){
+    animation-delay: 1s;
+}
+.waveText:nth-child(6){
+    animation-delay: 1.2s;
+}
+.waveText:nth-child(7){
+    animation-delay: 1.4s;
+}
+.waveText:nth-child(8){
+    animation-delay: 1.6s;
+}
+.waveText:nth-child(9){
+    animation-delay: 1.8s;
+}
+.waveText:nth-child(10){
+    animation-delay: 2.0s;
+}
+.waveText:nth-child(11){
+    animation-delay: 2.2s;
+}
+.waveText:nth-child(12){
+    animation-delay: 2.4s;
+}
+
+
+@keyframes upDown {
+    to { transform: translatey(20px) rotateZ(15deg);color:black;}
+}
+
+[unread=true]::after{
+    font-size: 14px;
+    content: "❗";
+    position: absolute;
+    right:2px;
+    top:4px;
+    transform: rotate(10deg);
 }

@@ -1,5 +1,6 @@
 let ws;
 
+
 let canvas = document.getElementById("canvas");
 canvas.width=500;
 canvas.height=500;
@@ -7,11 +8,21 @@ let ctx = canvas.getContext("2d");
 
 const PORT = 44444;
 
+//prod
+const wsurl = "wss://jannik323.software:"+PORT;
+const httpurl = "https://jannik323.software:"+PORT;
+
+//debug
+// const wsurl = "ws://127.0.0.1:"+PORT;
+// const httpurl = "http://127.0.0.1:"+PORT;
+
+
 let playUIEle = document.getElementById("playUI");
 
 let usernameEle = document.getElementById("username");
 let startMenuEle = document.getElementById("startmenu");
 let deathMenuEle = document.getElementById("deathmenu");
+let gameresetmenuEle = document.getElementById("gameresetmenu");
 let connectionerrorEle = document.getElementById("connectionerror");
 let deathCauseEle = document.getElementById("deathCause");
 let leaderboardEle = document.getElementById("leaderboard");
@@ -24,6 +35,7 @@ let chatSpanEle = chatEle.querySelectorAll("button span")[1];
 
 let highscoreScoreEle = document.getElementById("highscoreScore");
 let highscoreUsernameEle = document.getElementById("highscoreUsername");
+let highscoresEle = document.getElementById("highscores");
 
 
 
@@ -45,15 +57,15 @@ let viewingleaderboard = false;
 let viewingchat = false;
 
 
-const playerSnakeColor="#33632b";
-const playerSnakeHeadColor=tColor(playerSnakeColor,-20);
+const playerSnakeColor="#4e9b49";
+const playerSnakeHeadColor=tColor(playerSnakeColor,-40);
 const snakeColor="#634c2b";
-const snakeHeadColor=tColor(snakeColor,-20);
+const snakeHeadColor=tColor(snakeColor,-40);
 const playerGhostSnakeColor="#575e56";
-const playerGhostSnakeHeadColor=tColor(playerGhostSnakeColor,-20);
+const playerGhostSnakeHeadColor=tColor(playerGhostSnakeColor,-40);
 const ghostSnakeColor="#7a7a7a";
-const ghostSnakeHeadColor=tColor(ghostSnakeColor,-20);
-const obstacleColor="#0a0a0f";
+const ghostSnakeHeadColor=tColor(ghostSnakeColor,-40);
+const obstacleColor="#1f1f2b";
 const appleColor="#a03030";
 const safeZoneColor="#dce6ea";
 
@@ -67,14 +79,13 @@ function tColor(col, amt) {
     return "#"+newColor.toString(16);
 }
 
+toggleLeaderboardShow(); // show leaderboard at start
 function toggleLeaderboardShow(){
-    if(leaderboardEle.getAttribute("open")=="true"){
-        leaderboardEle.setAttribute("open","false");
+    if(viewingleaderboard){
         leaderboardSpanEle.style.transform = "rotate(0deg)";
         viewingleaderboard=false;
         leaderboardListEle.style.display="none";
     }else{
-        leaderboardEle.setAttribute("open","true");
         leaderboardSpanEle.style.transform = "rotate(90deg)";
         viewingleaderboard=true;
         leaderboardListEle.style.display="flex";
@@ -83,14 +94,12 @@ function toggleLeaderboardShow(){
 }
 
 function toggleChatShow(){
-    if(chatEle.getAttribute("open")=="true"){
-        chatEle.setAttribute("open","false");
+    if(viewingchat){
         chatSpanEle.style.transform = "rotate(0deg)";
         viewingchat=false;
         chatListEle.style.display="none";
         chatInputEle.parentElement.parentElement.style.display="none";
     }else{
-        chatEle.setAttribute("open","true");
         chatSpanEle.style.transform = "rotate(90deg)";
         viewingchat=true;
         chatListEle.style.display="flex";
@@ -100,6 +109,7 @@ function toggleChatShow(){
 }
 
 function createChat(){
+    chatEle.setAttribute("unread",false);
     chatListEle.innerHTML="";
     if(chat.length==0){
         chatListEle.style.display="none"
@@ -109,15 +119,25 @@ function createChat(){
     }
     chat.forEach(e=>{
         let div = document.createElement("div");
-        let usernamespan = document.createElement("span");
-        usernamespan.innerText=e.usr;
-        let colonspan = document.createElement("span");
-        colonspan.innerText=":";
-        let msgspan = document.createElement("span");
-        msgspan.innerText=e.msg;
-        div.appendChild(usernamespan);
-        div.appendChild(colonspan);
-        div.appendChild(msgspan);
+        if(e.system){
+            let msgspan = document.createElement("span");
+            msgspan.innerText=e.msg;
+            msgspan.style.color="red";
+            msgspan.style.fontSize="0.8rem";
+            msgspan.style.textShadow="#810000 0px 0px 5px";
+            div.appendChild(msgspan);
+        }else{
+            let usernamespan = document.createElement("span");
+            usernamespan.innerText=e.usr;
+            usernamespan.style.fontWeight="bold";
+            let colonspan = document.createElement("span");
+            colonspan.innerText=":";
+            let msgspan = document.createElement("span");
+            msgspan.innerText=e.msg;
+            div.appendChild(usernamespan);
+            div.appendChild(colonspan);
+            div.appendChild(msgspan);
+        }
         chatListEle.appendChild(div);
     })
     chatListEle.scrollTop=chatListEle.scrollHeight;
@@ -148,6 +168,7 @@ const Camera = {
     },
     transformDraw(x,y,w=1,h=1){
         ctx.fillRect((x*Camera.scale)-Camera.x,(y*Camera.scale)-Camera.y,w*Camera.scale,h*Camera.scale);
+        ctx.strokeRect((x*Camera.scale)-Camera.x,(y*Camera.scale)-Camera.y,w*Camera.scale,h*Camera.scale);
     }
     ,
     changeScale:(change=1)=>{
@@ -217,6 +238,12 @@ msgHandler.addMsgHandle("lb",data=>{
     }
 })
 
+msgHandler.addMsgHandle("msginit",data=>{
+    data.forEach(e=>{
+        chat.push(e);
+    })
+})
+
 msgHandler.addMsgHandle("msg",data=>{
     chat.push(data);
     if(chat.length>30){
@@ -224,15 +251,52 @@ msgHandler.addMsgHandle("msg",data=>{
     }
     if(viewingchat){
         createChat();
+    }else{
+        chatEle.setAttribute("unread",true);
     }
 })
 
+msgHandler.addMsgHandle("sysmsg",data=>{
+    chat.push({system:true,msg:data});
+    if(chat.length>30){
+        chat.splice(0,1);
+    }
+    if(viewingchat){
+        createChat();
+    }else{
+        chatEle.setAttribute("unread",true);
+    }
+})
+
+
+msgHandler.addMsgHandle("gamereset",()=>{
+    initialized=false;
+    snakes = [];
+    apples = [];
+    obstacles = [];
+    safezones = [];
+    leaderboard = [];
+    selfSnake = null;
+    deathMenuEle.style.display="none";
+    gameresetmenuEle.style.display="flex";
+})
+
 msgHandler.addMsgHandle("init",data=>{
+    gameresetmenuEle.style.display="none";
+    initialized=true;
     apples=data.apples;
     snakes=data.snakes;
     obstacles=data.obstacles;
     safezones=data.safezones;
     spawnCountDownTime=data.spawnCountDownTime;
+
+    highscoreScoreEle.innerText=data.hc.score;
+    highscoreUsernameEle.innerText=data.hc.usr;
+
+    leaderboard=data.lb;
+    if(viewingleaderboard){
+        createLeaderBoard();
+    }
 
     gridSize=data.gridSize;
     id=data.id;
@@ -244,6 +308,7 @@ msgHandler.addMsgHandle("init",data=>{
 })
 
 msgHandler.addMsgHandle("snakespawn",data=>{
+    if(!initialized){initConnectionError();return;}
     let snake = snakes.find(s=>s.id==data.id);
     if(data.id==id){
         selfSnake=data;
@@ -263,6 +328,7 @@ msgHandler.addMsgHandle("snakespawn",data=>{
 })
 
 msgHandler.addMsgHandle("snakechange",data=>{
+    if(!initialized){initConnectionError();return;}
     data.forEach((s,i)=>{
         if(s==null||snakes[i]==null)return;
         if(s.id==id){
@@ -279,6 +345,7 @@ msgHandler.addMsgHandle("snakechange",data=>{
 })
 
 msgHandler.addMsgHandle("snakeremove",data=>{
+    if(!initialized){initConnectionError();return;}
     snakes = snakes.filter(s => s.id !== data);
 })
 
@@ -288,24 +355,28 @@ msgHandler.addMsgHandle("death",data=>{
 })
 
 msgHandler.addMsgHandle("applechange",data=>{
+    if(!initialized){initConnectionError();return;}
     let apple = apples.find(a=>a.id==data.id);
     apple.x=data.x;
     apple.y=data.y;
 })
 
 msgHandler.addMsgHandle("appleadd",data=>{
+    if(!initialized){initConnectionError();return;}
     data.forEach(a=>{
         apples.push(a);
     })
 })
 
 msgHandler.addMsgHandle("obstacleadd",data=>{
+    if(!initialized){initConnectionError();return;}
     data.forEach(o=>{
         obstacles.push(o);
     })
 })
 
 msgHandler.addMsgHandle("obstacleremove",data=>{
+    if(!initialized){initConnectionError();return;}
     let i = obstacles.findIndex(o=>o.id==data);
     if(i==-1){
         console.error("tried removing non existing obstacle:"+ data);
@@ -317,6 +388,10 @@ msgHandler.addMsgHandle("obstacleremove",data=>{
 msgHandler.addMsgHandle("username",data=>{
     snakes.find(s=>s.id==data.id).username=data.username;
 })
+
+function initConnectionError(){
+    console.error("Connection Setup Error.\n Reload maybe needed, because developer is too lazy to fix.");
+}
 
 function getSnakeTail(body){
     if(body.nextBody==null)return body;
@@ -366,6 +441,7 @@ function restoreBodyPrevious(body){
 }
 
 function loop(){
+    if(!initialized)return;
     update();
     render();
 }
@@ -398,6 +474,9 @@ function renderBodies(body,altcolor){
 
 function render(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    ctx.strokeStyle="black";
+    ctx.lineWidth = 2;
 
     ctx.fillStyle=safeZoneColor;
     if(selfSnake!=null&&(selfSnake.state=="i")){
@@ -442,6 +521,7 @@ function render(){
         ctx.beginPath();
         ctx.arc(transform.x+transform.w/2,transform.y+transform.w/2,transform.w/2,0,Math.PI*2);
         ctx.fill();
+        ctx.stroke();
     });
 
     ctx.fillStyle=obstacleColor;
@@ -502,6 +582,14 @@ chatInputEle.addEventListener("keydown",e=>{
     }
 })
 
+function openMenu(id){
+    document.getElementById(id).style.display="flex";
+}
+
+function closeMenu(id){
+    document.getElementById(id).style.display="none";
+}
+
 function startClick(){
     if(usernameEle.value.trim().length===0){
         usernameEle.value="";
@@ -509,8 +597,7 @@ function startClick(){
         return;
     };
     startMenuEle.style.display="none";
-    ws = new WebSocket("wss://jannik323.software:"+PORT);
-    // ws = new WebSocket("ws://127.0.0.1:"+PORT);
+    ws = new WebSocket(wsurl);
 
     ws.onerror=()=>{
         connectionerrorEle.style.display = "block";
@@ -590,4 +677,50 @@ function restartClick(){
 
 function reloadClick(){
     location.reload(1);
+}
+
+getHighscores();
+function getHighscores(){
+    fetch(httpurl+"/history")
+    .then(res=>{
+        if(!res.ok){
+            throw new Error("Error while fetching history data:" + res.statusText);
+        }
+        return res.json();
+    }).then(e=>{
+        displayHighscores(e);
+    }).catch(err=>{
+        console.error(err);
+    })
+
+    fetch(httpurl+"/highscore")
+    .then(res=>{
+        if(!res.ok){
+            throw new Error("Error while fetching history data:" + res.statusText);
+        }
+        return res.json();
+    }).then(e=>{
+        document.getElementById("todayHighscorePlayer").innerText=e.usr;
+        document.getElementById("todayHighscoreScore").innerText=e.score;
+    }).catch(err=>{
+        console.error(err);
+    })
+}
+
+function displayHighscores(data){
+    console.log(data);
+    data.forEach(e => {
+        let tr = document.createElement("tr");
+        let userspan = document.createElement("td");
+        userspan.innerText=e.data.usr;
+        let scorespan = document.createElement("td");
+        scorespan.innerText=e.data.score;
+        let datespan = document.createElement("td");
+        let date = new Date(e.date);
+        datespan.innerText=date.getDate()+"."+(date.getMonth()+1);
+        tr.appendChild(userspan);
+        tr.appendChild(scorespan);
+        tr.appendChild(datespan);
+        highscoresEle.appendChild(tr);
+    });
 }
