@@ -12,7 +12,7 @@
     <div class="center">
         <canvas id="canvas"></canvas>
         <div id="startmenu" style="position:fixed; display: flex; flex-direction: column;" >
-            <div class="row">
+            <div class="row" style="align-items: center;" >
                 <div>
                     <span style="width: 100%; margin-bottom: 2rem; display:flex;">
                         <span class="waveText">S</span>
@@ -38,23 +38,33 @@
                         <button onclick="openMenu('howtoplay');" class="minbutton">How to play?</button>
                     </div>
                 </div>
-                <div class="menu" style="position: relative;">
-                    <h2 class="nomargin">Winners:</h2>
-                    <div  class="whitebox nogap" style="overflow-y: scroll; height: 85px; gap:0.25rem;align-items: flex-start;">
-                        <table id="highscores">
-                            <tr>
-                                <th>Player</th>
-                                <th>Score</th>
-                                <th>Date</th>
-                              </tr>
-                            <tr>
-                                <td id="todayHighscorePlayer">???</td>
-                                <td id="todayHighscoreScore">???</td>
-                                <td>Today</td>
-                            </tr>
-                        </table>
+                <div>
+                    <div class="menu" style="position: relative;">
+                        <h2 class="nomargin">Current Highscore</h2>
+                        <div  class="whitebox nogap">
+                            <table>
+                                <tr>
+                                    <td id="todayHighscorePlayer">???</td>
+                                    <td id="todayHighscoreScore">???</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="menu" style="position: relative;">
+                        <h2 class="nomargin">Winners:</h2>
+                        <div  class="whitebox nogap" style="overflow-y: scroll; height: 85px; gap:0.25rem;align-items: flex-start;">
+                            <table id="highscores">
+                                <tr>
+                                    <th>Player</th>
+                                    <th>Score</th>
+                                    <th>Date</th>
+                                  </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
+                
             </div>
             
         </div>
