@@ -9,12 +9,12 @@ let ctx = canvas.getContext("2d");
 const PORT = 44444;
 
 //prod
-const wsurl = "wss://jannik323.software:"+PORT;
-const httpurl = "https://jannik323.software:"+PORT;
+ const wsurl = "wss://jannik323.software:"+PORT;
+ const httpurl = "https://jannik323.software:"+PORT;
 
 //debug
-// const wsurl = "ws://127.0.0.1:"+PORT;
-// const httpurl = "http://127.0.0.1:"+PORT;
+//const wsurl = "ws://127.0.0.1:"+PORT;
+//const httpurl = "http://127.0.0.1:"+PORT;
 
 
 let playUIEle = document.getElementById("playUI");
@@ -37,6 +37,9 @@ let highscoreScoreEle = document.getElementById("highscoreScore");
 let highscoreUsernameEle = document.getElementById("highscoreUsername");
 let highscoresEle = document.getElementById("highscores");
 
+let roundtimeEle = document.getElementById("roundtime");
+
+
 
 
 let snakes = [];
@@ -52,6 +55,7 @@ let id;
 let initialized = false;
 let spawnCountdown = -1;
 let spawnCountDownTime = 3;
+let fullresetTimeDate = 0;
 
 let viewingleaderboard = false;
 let viewingchat = false;
@@ -289,6 +293,7 @@ msgHandler.addMsgHandle("init",data=>{
     obstacles=data.obstacles;
     safezones=data.safezones;
     spawnCountDownTime=data.spawnCountDownTime;
+    fullresetTimeDate=data.frT;
 
     highscoreScoreEle.innerText=data.hc.score;
     highscoreUsernameEle.innerText=data.hc.usr;
@@ -444,6 +449,12 @@ function loop(){
     if(!initialized)return;
     update();
     render();
+}
+
+function updateRoundTimer(){
+    let time = (fullresetTimeDate-Date.now());
+    let mins = Math.floor(time/60000);
+    roundtimeEle.innerText= Math.floor(mins/60) +":"+mins%60+":"+Math.floor(time/1000)%60;
 }
 
 function update(){
@@ -602,10 +613,12 @@ function startClick(){
     ws.onerror=()=>{
         connectionerrorEle.style.display = "block";
         playUIEle.style.display="none";
+        deathMenuEle.style.display="block";
     }
 
     ws.onopen=()=>{
         setInterval(loop,16);
+        setInterval(updateRoundTimer,1000);
         playUIEle.style.display="block";
     }
 
